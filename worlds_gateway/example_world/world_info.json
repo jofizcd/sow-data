@@ -1,0 +1,13 @@
+{
+  "name": "Example World",
+  "description": "A magical world where there are various magical characters.",
+  "tags": ["fantasy", "isekai", "DnD"],
+  "author": "sow-official",
+  "characters": [
+    "magician.json",
+    "npc_agent.json",
+    "npc_orc.json"
+  ],
+  "lorebook": "world_lorebook.json",
+  "thumbnail_url": "https://i.imgur.com/example_url"
+}
