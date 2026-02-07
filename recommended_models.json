@@ -1,0 +1,21 @@
+{
+  "version": "2.2.1",
+  "last_updated": "2026-02-07",
+  "models": [
+    {
+      "hf_id": "TheDrummer/Cydonia-24B-v4.3-GGUF",
+      "name": "Cydonia 24B v4.3",
+      "author": "TheDrummer",
+      "downloads": 10760,
+      "min_ram_gb": 8,
+      "recommended_ram_gb": 12,
+      "min_vram_gb": 0,
+      "recommended_vram_gb": 6,
+      "optimal_quant": "Q4_K_M",
+      "tags": ["rp", "24b"],
+      "description": "Best 24B local language model for RP.",
+      "badges": ["24GB"],
+      "author_notes": "Затестим"
+    }
+  ]
+}
