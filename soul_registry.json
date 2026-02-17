@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "characters": [
+    {
+      "name": "Makise Kurisu",
+      "author": "Jofi",
+      "download_url": "https://raw.githubusercontent.com/jofizcd/sow-data/main/characters/Makise_Kurisu.png"
+    },
+    {
+      "name": "Makima",
+      "author": "Jofi",
+      "download_url": "https://raw.githubusercontent.com/jofizcd/sow-data/main/characters/Makima.png"
+    },
+    {
+      "name": "Akane Kurokawa",
+      "author": "Jofi",
+      "download_url": "https://raw.githubusercontent.com/jofizcd/sow-data/main/characters/Akane_Kurokawa.png"
+    }
+  ]
+}
