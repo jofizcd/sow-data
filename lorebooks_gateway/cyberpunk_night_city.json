@@ -172,7 +172,7 @@
             "delay": 0,
             "injection_behavior": "active",
             "semantic_trigger": "",
-            "depends_on": "Netrunning & The Deep Net",
+            "depends_on": 4,
             "chain_delay": 2,
             "min_msg": 0,
             "max_msg": 9999
