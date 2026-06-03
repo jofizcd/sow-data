@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "lorebooks": [
+    {
+      "name": "Cyberpunk 2077: Night City",
+      "author": "Jofi",
+      "description": "A highly detailed sci-fi lorebook for Night City. Featuring the obligatory street slang, the cool presence of mega-corporations, clever cyberpsychosis triggers, network hacking sequences, and interactive braindance sessions.",
+      "entry_count": 9,
+      "download_url": "https://raw.githubusercontent.com/jofizcd/sow-data/main/lorebooks/cyberpunk_night_city.json"
+    }
+  ]
+}
