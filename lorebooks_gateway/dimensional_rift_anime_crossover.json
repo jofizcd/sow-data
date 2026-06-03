@@ -177,8 +177,8 @@
             "cooldown": 6,
             "delay": 0,
             "injection_behavior": "active",
-            "depends_on": 4,  // Ссылается на ультимативный прием (uid: 4)
-            "chain_delay": 2,  // Активируется через 2 хода после ультимейта
+            "depends_on": 4,
+            "chain_delay": 2,
             "min_msg": 0,
             "max_msg": 9999
         },
