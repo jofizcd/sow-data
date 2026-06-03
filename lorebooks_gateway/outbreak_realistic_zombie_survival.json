@@ -236,8 +236,8 @@
             "cooldown": 5,
             "delay": 0,
             "injection_behavior": "active",
-            "depends_on": 6,  // Зависит от начала боя (uid: 6)
-            "chain_delay": 1,  // Срабатывает практически сразу после выстрела
+            "depends_on": 6,
+            "chain_delay": 1,
             "min_msg": 0,
             "max_msg": 9999
         },
