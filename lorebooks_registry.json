@@ -28,6 +28,34 @@
       "description": "A comprehensive lorebook for classic fantasy Isekai adventures.",
       "entry_count": 5,
       "download_url": "https://raw.githubusercontent.com/jofizcd/sow-data/main/lorebooks_gateway/isekai_fantasy_rpg_world.json"
+    },
+    {
+      "name": "Rust & Steel: Ruined Earth",
+      "author": "Jofi",
+      "description": "A large-scale sci-fi lorebook in a post-apocalyptic style (based on NieR: Automata and Goddess of Victory: Nikke).",
+      "entry_count": 5,
+      "download_url": "https://raw.githubusercontent.com/jofizcd/sow-data/main/lorebooks_gateway/rust_and_steel_ruined_earth.json"
+    },
+    {
+      "name": "Dimensional Rift: Anime Crossover",
+      "author": "Jofi",
+      "description": "A large-scale crossover lorebook for anime universes and multiverse scenarios",
+      "entry_count": 5,
+      "download_url": "https://raw.githubusercontent.com/jofizcd/sow-data/main/lorebooks_gateway/dimensional_rift_anime_crossover.json"
+    },
+    {
+      "name": "Outbreak: Realistic Zombie Survival",
+      "author": "Jofi",
+      "description": "A grim and uncompromising survival lorebook for realistic zombie apocalypse scenarios.",
+      "entry_count": 5,
+      "download_url": "https://raw.githubusercontent.com/jofizcd/sow-data/main/lorebooks_gateway/outbreak_realistic_zombie_survival.json"
+    },
+    {
+      "name": "Voidfarer: Hard Sci-Fi Space Survival",
+      "author": "Jofi",
+      "description": "A comprehensive hard-sci-fi lorebook about survival on the drifting research ship Vanguard 9.",
+      "entry_count": 5,
+      "download_url": "https://raw.githubusercontent.com/jofizcd/sow-data/main/lorebooks_gateway/voidfarer_hard_scifi_space_survival.json"
     }
   ]
 }
