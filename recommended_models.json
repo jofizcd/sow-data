@@ -33,11 +33,11 @@
       "author_notes": "Temperature 0.75–1.0. Лучше всего для длинных сессий."
     },
     {
-      "hf_id": "Steelskull/L3.3-Nevoria-R1-70B-GGUF",
+      "hf_id": "bartowski/L3.3-MS-Nevoria-70b-GGUF",
       "name": "Nevoria-R1-70B",
       "author": "Steelskull",
-      "downloads": "45",
-      "likes": 1,
+      "downloads": "1293",
+      "likes": 16,
       "min_ram_gb": 32,
       "recommended_ram_gb": 64,
       "min_vram_gb": 0,
@@ -228,11 +228,11 @@
       "author_notes": "One of the community favorites."
     },
     {
-      "hf_id": "bartowski/Qwen_Qwen3.6-35B-A3B-GGUF",
+      "hf_id": "LuffyTheFox/Qwen3.6-35B-A3B-Uncensored-Genesis-Hermes-V5-GGUF",
       "name": "Qwen3.6-35B-A3B",
-      "author": "Qwen",
-      "downloads": "161635",
-      "likes": 60,
+      "author": "LuffyTheFox",
+      "downloads": "83658",
+      "likes": 181,
       "min_ram_gb": 20,
       "recommended_ram_gb": 32,
       "min_vram_gb": 0,
@@ -258,9 +258,9 @@
       "author_notes": "Highly stable at medium contexts. Great fallback if Gemma 4's multi-modality architecture takes up too much of your specific VRAM allocation."
     },
     {
-      "hf_id": "unsloth/gemma-4-12b-it-GGUF",
+      "hf_id": "HauhauCS/Gemma4-12B-QAT-Uncensored-HauhauCS-Balanced",
       "name": "Gemma-4-12B-it",
-      "author": "Google",
+      "author": "HauhauCS",
       "downloads": 62850,
       "likes": 276,
       "min_ram_gb": 16,
