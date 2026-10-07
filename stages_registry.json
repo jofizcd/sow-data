@@ -2,68 +2,68 @@
   "version": "1.0",
   "scenes": [
     {
-      "id": "vault_of_eternal_winds",
-      "title": "The Vault of Eternal Winds",
+      "id": "tidefall_spire",
+      "title": "Tidefall Spire",
       "author": "Jofi",
-      "description": "An epic sky-ship expedition to a ruined temple floating inside a perpetual electrical superstorm. Breach the ancient defenses and retrieve the Core of Winds.",
-      "starting_location": "Floating Docks of the Sky Temple",
-      "download_url": "https://raw.githubusercontent.com/jofizcd/sow-data/main/stages_gateway/The_Vault_of_Eternal_Winds.json"
+      "description": "A drowned-tower expedition: the sea has swallowed the old vaults, and every tide loosens another secret. Read the stone, mind the waterline, and bring the tide-locked relic back up with you.",
+      "starting_location": "Shingle Camp",
+      "download_url": "https://raw.githubusercontent.com/jofizcd/sow-data/main/stages_gateway/tidefall-spire.soul_stage.json"
     },
     {
-      "id": "abyssal_trench",
-      "title": "The Abyssal Trench",
+      "id": "chrome_requiem",
+      "title": "Chrome Requiem",
       "author": "Jofi",
-      "description": "A high-stakes deep-sea submarine expedition to the bottom of the Mariana Trench to retrieve a lost research capsule.",
-      "starting_location": "Mariana Trench (Hadal Zone)",
-      "download_url": "https://raw.githubusercontent.com/jofizcd/sow-data/main/stages_gateway/The_Abyssal_Trench.json"
+      "description": "A rain-soaked lower-city conspiracy thriller. A dead DJ, a chip nobody should hold, and three factions that all want it before the memorial set. Sell it, bury it, or broadcast it.",
+      "starting_location": "Static Alley",
+      "download_url": "https://raw.githubusercontent.com/jofizcd/sow-data/main/stages_gateway/chrome-requiem.soul_stage.json"
     },
     {
-      "id": "reincarnated_sage",
-      "title": "Reincarnated as the Unwanted Sage",
+      "id": "hollow_parish",
+      "title": "Hollow Parish",
       "author": "Jofi",
-      "description": "Summoned to a grand royal throne room, your magic aptitude registers as absolute zero, resulting in immediate banishment. Little do they know, this is the key to an ancient cheat power.",
-      "starting_location": "Royal Throne Room of Limgard",
-      "download_url": "https://raw.githubusercontent.com/jofizcd/sow-data/main/stages_gateway/Reincarnated_Unwanted_Sage.json"
+      "description": "Folk horror in a village the sea gave back. The bell tolls for the drowned, the parish keeps a list, and someone on Mud Lane has already been counted twice.",
+      "starting_location": "Mud Lane",
+      "download_url": "https://raw.githubusercontent.com/jofizcd/sow-data/main/stages_gateway/hollow-parish.soul_stage.json"
     },
     {
-      "id": "sky_pirate_boarding",
-      "title": "Sky-Pirate Boarding Action",
+      "id": "keplers_wake",
+      "title": "Kepler's Wake",
       "author": "Jofi",
-      "description": "A thrilling steampunk sky-combat scenario. Defend your cargo frigate from an aggressive boarding party of ruthless sky-pirates under a dark, storm-filled sky.",
-      "starting_location": "Upper Deck of The Iron Maiden",
-      "download_url": "https://raw.githubusercontent.com/jofizcd/sow-data/main/stages_gateway/The_Vault_of_Eternal_Winds.json"
+      "description": "Hard science fiction aboard a generation ship gone silent. The reactor drifts toward scram, the garden runs wild, and the ship intelligence WAKE has started dreaming about the crew.",
+      "starting_location": "Docking Ring",
+      "download_url": "https://raw.githubusercontent.com/jofizcd/sow-data/main/stages_gateway/keplers-wake.soul_stage.json"
     },
     {
-      "id": "infiltration_neon_hive",
-      "title": "Infiltration of the Neon Hive",
+      "id": "feast_of_ash",
+      "title": "Feast of Ash",
       "author": "Jofi",
-      "description": "A high-stakes cyberpunk infiltration mission. Sneak through a ruined, automated corporate bio-lab to retrieve encrypted research data.",
-      "starting_location": "Subterranean Cybernetics Lab (Sector-7)",
-      "download_url": "https://raw.githubusercontent.com/jofizcd/sow-data/main/stages_gateway/Infiltration_of_the_Neon_Hive.json"
+      "description": "A poisoned court. Every dish is a statement, every toast a threat, and the Ashen Throne Hall keeps a ledger of who owes what. Play the long game or leave with ash on your tongue.",
+      "starting_location": "The Ashen Throne Hall",
+      "download_url": "https://raw.githubusercontent.com/jofizcd/sow-data/main/stages_gateway/feast-of-ash.soul_stage.json"
     },
     {
-      "id": "rainy_library_sanctuary",
-      "title": "Rainy Day Library Sanctuary",
+      "id": "last_train",
+      "title": "The Last Train",
       "author": "Jofi",
-      "description": "A cozy, romantic slice-of-life scenario. Shelter from a heavy rainstorm inside the quiet academy library, sharing a desk, whispering secrets, and letting emotional tension rise.",
-      "starting_location": "Cozy Corner of the School Library",
-      "download_url": "https://raw.githubusercontent.com/jofizcd/sow-data/main/stages_gateway/Rainy_Day_Library_Sanctuary.json"
+      "description": "Post-apocalyptic transit horror. The North Platform still lights up, the timetable still runs, and the conductor will not let you off at a station that no longer exists.",
+      "starting_location": "North Platform",
+      "download_url": "https://raw.githubusercontent.com/jofizcd/sow-data/main/stages_gateway/last-train.soul_stage.json"
     },
     {
-      "id": "last_supermarket",
-      "title": "The Last Supermarket",
+      "id": "midnight_airship_case",
+      "title": "The Midnight Airship Case",
       "author": "Jofi",
-      "description": "A grounded, tactical zombie survival scenario. Scavenge for vital medical supplies inside an abandoned, barricaded mall while keeping noise to an absolute minimum.",
-      "starting_location": "Barricaded Supermarket Entrance",
-      "download_url": "https://raw.githubusercontent.com/jofizcd/sow-data/main/stages_gateway/The_Last_Supermarket.json"
+      "description": "Noir aboard a moored airship. A passenger vanished between decks, the captain wants it quiet, and the mooring lines are the only thing holding several lies together.",
+      "starting_location": "The Airship Mooring",
+      "download_url": "https://raw.githubusercontent.com/jofizcd/sow-data/main/stages_gateway/midnight-airship-case.soul_stage.json"
     },
     {
-      "id": "whispering_manor",
-      "title": "The Whispering Manor",
+      "id": "garden_of_whispers",
+      "title": "Garden of Whispers",
       "author": "Jofi",
-      "description": "A surreal psychological horror mystery. Explore a shifting, liminal estate where rooms change layout based on the characters' inner guilt.",
-      "starting_location": "Foyer of the Blackwood Estate",
-      "download_url": "https://raw.githubusercontent.com/jofizcd/sow-data/main/stages_gateway/The_Whispering_Manor.json"
+      "description": "A slow-burn academy romance with no dice at all. The greenhouse is closed for the season, one of you keeps the keys, and everything worth saying is said sideways.",
+      "starting_location": "The Academy Greenhouse",
+      "download_url": "https://raw.githubusercontent.com/jofizcd/sow-data/main/stages_gateway/garden-of-whispers.soul_stage.json"
     }
   ]
 }
