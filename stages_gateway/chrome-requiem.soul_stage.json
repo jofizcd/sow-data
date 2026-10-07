@@ -1,0 +1,342 @@
+{
+  "format": "soul-stage-package",
+  "version": 1,
+  "exported_at": "2026-10-07T00:00:00.000Z",
+  "scene": {
+    "id": "scene_chrome_requiem",
+    "schema_version": 3,
+    "title": "Chrome Requiem",
+    "description": "A dead courier, a chip full of blackmail, and three factions hunting one nightclub in the lower city. Sell it, bury it, or broadcast it.",
+    "starting_bg": "assets/backgrounds/neon_alley.png",
+    "party": [],
+    "gm_directive": "You are the Game Master of a neon-noir cyberpunk thriller. Emphasize leverage, surveillance, and the price of chrome: every upgrade was paid for by someone.",
+    "clocks": [
+      {
+        "id": "clock_trace",
+        "name": "Corporate Trace",
+        "segments": 6,
+        "filled": 1,
+        "description": "Helios security is triangulating the chip",
+        "finisher": "Black vans on every exit: Helios takes the chip and everyone who touched it.",
+        "is_active": true
+      },
+      {
+        "id": "clock_rave",
+        "name": "The Requiem Set",
+        "segments": 4,
+        "filled": 0,
+        "description": "DJ Null's memorial set approaches",
+        "finisher": "The set begins: forty thousand witnesses, one perfect moment to broadcast — or lose it.",
+        "is_active": true
+      },
+      {
+        "id": "clock_debt",
+        "name": "Rook's Patience",
+        "segments": 4,
+        "filled": 0,
+        "description": "The fixer wants their cut",
+        "finisher": "Rook sells the hero's location to the highest bidder.",
+        "is_active": true
+      }
+    ],
+    "quests": [
+      {
+        "id": "quest_chip",
+        "title": "The Null Chip",
+        "description": "Decide the fate of DJ Null's blackmail chip: sell, bury, or broadcast.",
+        "status": "active",
+        "requiresItem": "Deck Key",
+        "objectives": [
+          { "text": "Decrypt the chip", "completed": false },
+          { "text": "Choose a buyer — or none", "completed": false },
+          { "text": "Survive the handoff", "completed": false }
+        ]
+      },
+      {
+        "id": "quest_kira",
+        "title": "Find Kira",
+        "description": "Locate Null's missing apprentice before Helios does.",
+        "status": "active"
+      },
+      {
+        "id": "quest_debt",
+        "title": "Pay Off Rook",
+        "description": "Clear the debt for the safehouse — in cash or favors.",
+        "status": "active"
+      }
+    ],
+    "npcs": [
+      {
+        "id": "npc_rook",
+        "name": "Rook",
+        "archetype": "Fixer",
+        "personality": "Patient, pleasantly menacing, always counting",
+        "position": "Behind the bar of the back-alley clinic",
+        "active": true,
+        "notes": ["Owns the hero's debt and patience in that order"]
+      },
+      {
+        "id": "npc_kira",
+        "name": "Kira",
+        "archetype": "Apprentice DJ",
+        "personality": "Brilliant, grieving, running on fumes",
+        "position": "Somewhere in the lower city",
+        "active": true,
+        "notes": ["Last person to see Null alive"]
+      },
+      {
+        "id": "npc_sable",
+        "name": "Agent Sable",
+        "archetype": "Corporate hunter",
+        "personality": "Courteous, relentless, bills by the hour",
+        "position": "Two streets behind, always",
+        "active": true,
+        "notes": ["Never bluffs; never hurries"]
+      },
+      {
+        "id": "npc_doc",
+        "name": "Doc Hollow",
+        "archetype": "Street surgeon",
+        "personality": "Gallous humor over a steady scalpel",
+        "position": "The clinic behind the noodle stall",
+        "active": true,
+        "notes": ["Installed half the street's chrome"]
+      }
+    ],
+    "dice_rolls_enabled": true,
+    "created_at": "2026-10-07T00:00:00.000Z",
+    "genre": "cyberpunk",
+    "ruleset": "d100",
+    "resource_definitions": [
+      { "id": "hp", "name": "Health", "value": 20, "min": 0, "max": 20, "unit": "HP", "icon": "heart", "color": "emerald" },
+      { "id": "gold", "name": "Credits", "value": 300, "min": 0, "max": 9999, "unit": "cr", "icon": "gold", "color": "amber" },
+      { "id": "heat", "name": "Heat", "value": 1, "min": 0, "max": 6, "unit": "lvl", "icon": "flame", "color": "red" }
+    ],
+    "enabled_modules": { "clocks": true, "quests": true, "inventory": true, "dice": true, "resources": true, "factions": true, "abilities": true },
+    "factions": [
+      {
+        "id": "fac_helios",
+        "name": "Helios Dynamics",
+        "description": "The corp that owns the skyline",
+        "reputation": -45,
+        "standing": "unfriendly",
+        "icon": "☀️",
+        "color": "#f59e0b",
+        "leader": "Director Okafor",
+        "headquarters": "Helios Spire",
+        "relations": { "fac_ghosts": "war" },
+        "perks": ["City-wide surveillance"],
+        "penalties": ["Disappearance teams"]
+      },
+      {
+        "id": "fac_ghosts",
+        "name": "The Ghosts",
+        "description": "Dead couriers' union of the lower city",
+        "reputation": 35,
+        "standing": "friendly",
+        "icon": "👻",
+        "color": "#38bdf8",
+        "leader": "Rook",
+        "headquarters": "The clinic basement",
+        "relations": { "fac_helios": "war" },
+        "perks": ["Safehouses and silence"],
+        "penalties": ["Debts called in blood"]
+      },
+      {
+        "id": "fac_nullflock",
+        "name": "Nullflock",
+        "description": "Fans and followers of DJ Null",
+        "reputation": 10,
+        "standing": "neutral",
+        "icon": "🎧",
+        "color": "#8b5cf6",
+        "leader": "No one",
+        "headquarters": "The Requiem Club",
+        "relations": {},
+        "perks": ["Eyes everywhere"],
+        "penalties": ["Grief makes informants"]
+      }
+    ],
+    "abilities": [
+      {
+        "id": "abil_ghost",
+        "name": "Ghost Protocol",
+        "description": "Drop off every grid for a scene.",
+        "category": "stealth",
+        "cooldownTurns": 3,
+        "currentCooldown": 0,
+        "effect": "Untraceable until the next loud action",
+        "unlocked": true,
+        "tags": ["stealth"],
+        "icon": "eye"
+      },
+      {
+        "id": "abil_overclock",
+        "name": "Overclock",
+        "description": "Burn chrome hot for one perfect moment.",
+        "category": "tech",
+        "cooldownTurns": 2,
+        "currentCooldown": 0,
+        "cost": { "hp": 2 },
+        "effect": "Succeeds at one technical action at a cost",
+        "unlocked": true,
+        "tags": ["tech"],
+        "icon": "zap"
+      },
+      {
+        "id": "abil_leverage",
+        "name": "Leverage",
+        "description": "Know exactly what someone cannot afford to lose.",
+        "category": "social",
+        "cooldownTurns": 4,
+        "currentCooldown": 0,
+        "effect": "Turns one negotiation decisively",
+        "unlocked": true,
+        "tags": ["social"],
+        "icon": "briefcase"
+      }
+    ],
+    "world_context": "The lower city never sleeps and never forgets. DJ Null is dead, their final set is in three nights, and a chip of Helios blackmail is burning a hole through everyone who touches it.",
+    "starting_location": "Static Alley",
+    "time_of_day": "Night",
+    "gm_tone": "Neon-noir thriller",
+    "narrator_style": "Lean electric prose in the present tense",
+    "difficulty": "normal",
+    "optional_verbs": ["gold", "status", "skill", "rel", "npc", "npcdel", "move", "weather", "var"],
+    "npc_cap": 5,
+    "max_actor_depth": 3,
+    "lock_bg": false,
+    "conversation_method": "Local LLM",
+    "persona": "default",
+    "solo_mode": true,
+    "location_map": [
+      {
+        "name": "Static Alley",
+        "keys": ["static", "alley", "noodles"],
+        "bg": "assets/backgrounds/neon_alley.png",
+        "tier": 1,
+        "alertLevel": "normal",
+        "controllingFaction": "fac_ghosts",
+        "description": "Rain, signage, and the smell of the noodle stall above the clinic."
+      },
+      {
+        "name": "The Relay Basement",
+        "keys": ["relay", "basement", "servers"],
+        "bg": "assets/backgrounds/server_farm.png",
+        "tier": 2,
+        "alertLevel": "heightened",
+        "controllingFaction": "fac_ghosts",
+        "description": "Ghost hardware humming under the clinic floor."
+      },
+      {
+        "name": "The Requiem Club",
+        "keys": ["requiem", "club", "dancefloor"],
+        "bg": "assets/backgrounds/tavern_hall.png",
+        "tier": 2,
+        "alertLevel": "heightened",
+        "controllingFaction": "fac_nullflock",
+        "description": "Null's club, preparing the memorial set."
+      },
+      {
+        "name": "Doc's Back Room",
+        "keys": ["clinic", "surgery", "doc"],
+        "bg": "assets/backgrounds/tavern_room.png",
+        "tier": 2,
+        "alertLevel": "normal",
+        "controllingFaction": "fac_ghosts",
+        "description": "Chrome, antiseptic, and Rook's ledger."
+      }
+    ],
+    "start_state": {
+      "hp": 20,
+      "maxHp": 20,
+      "gold": 300,
+      "skills": { "Hacking": 70, "Streetwise": 65, "Stealth": 60 },
+      "inventory": [
+        {
+          "id": "inv_chip",
+          "name": "Null Chip",
+          "quantity": 1,
+          "category": "quest",
+          "description": "Encrypted. Everyone wants it. No one should have it."
+        },
+        {
+          "id": "inv_deck",
+          "name": "Deck Key",
+          "quantity": 1,
+          "category": "key",
+          "description": "Opens Null's private deck — and the chip with it."
+        },
+        {
+          "id": "inv_stim",
+          "name": "Stimpatch",
+          "quantity": 2,
+          "category": "consumable",
+          "description": "Borrowed time in adhesive form.",
+          "useEffect": "heal 8",
+          "tags": ["medical"]
+        },
+        {
+          "id": "inv_pistol",
+          "name": "Flechette Pistol",
+          "quantity": 1,
+          "category": "weapon",
+          "slot": "main_hand",
+          "equipped": true,
+          "damage": "1d8+1",
+          "description": "Quiet, illegal, persuasive."
+        },
+        {
+          "id": "inv_weave",
+          "name": "Ballistic Weave",
+          "quantity": 1,
+          "category": "armor",
+          "slot": "armor",
+          "equipped": true,
+          "soak": 1,
+          "description": "Fashion that stops shrapnel."
+        }
+      ],
+      "facts": [
+        { "key": "null_dead", "value": "DJ Null is dead; the memorial set is in three nights" },
+        { "key": "chip_wanted", "value": "Helios will pay — or kill — for the chip" }
+      ],
+      "location": "Static Alley",
+      "timeOfDay": "Night",
+      "weather": "Acid drizzle"
+    },
+    "beats": [
+      {
+        "id": "beat_1",
+        "text": "Decrypt the chip and learn what it holds",
+        "kind": "discovery",
+        "status": "active",
+        "condition": "when turn above 0"
+      },
+      {
+        "id": "beat_2",
+        "text": "Find Kira before Helios does",
+        "kind": "encounter",
+        "status": "active",
+        "condition": "when quest \"Find Kira\" active"
+      },
+      {
+        "id": "beat_3",
+        "text": "Choose the chip's fate at the memorial set",
+        "kind": "climax",
+        "status": "active",
+        "condition": "when quest \"The Null Chip\" done"
+      },
+      {
+        "id": "beat_4",
+        "text": "Settle the debt with Rook, one way or another",
+        "kind": "quiet",
+        "status": "active",
+        "condition": "when quest \"Pay Off Rook\" done"
+      }
+    ],
+    "opening_narration": "Acid drizzle beads on the clinic window. Downstairs, the relay hums; upstairs, Rook counts your debt aloud like a lullaby. The Null Chip sits in your pocket, warm as a secret.",
+    "first_message": "Rook: \"Three nights until the memorial set. Sell it, bury it, broadcast it — but decide before Helios decides for you.\""
+  },
+  "session": null
+}
