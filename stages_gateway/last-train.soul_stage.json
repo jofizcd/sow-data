@@ -1,0 +1,263 @@
+{
+  "format": "soul-stage-package",
+  "version": 1,
+  "exported_at": "2026-10-07T00:00:00.000Z",
+  "scene": {
+    "id": "scene_last_train",
+    "schema_version": 3,
+    "title": "The Last Train",
+    "description": "A dead metro after the Catastrophe: humming tunnels, raider gangs, and one last train that could still be started.",
+    "starting_bg": "assets/backgrounds/neon_alley.png",
+    "party": [],
+    "gm_directive": "You are the Game Master of a post-apocalyptic survival story. Emphasize the cost of every decision, scarce resources, and the hum of the tunnels. Resolve checks in the PbtA spirit: a partial success always has a price.",
+    "clocks": [
+      {
+        "id": "clock_swarm",
+        "name": "The Hum Draws Near",
+        "segments": 6,
+        "filled": 0,
+        "description": "Something is moving through the tunnels toward the platform",
+        "finisher": "The swarm breaks onto the platform! Flee at once or fight on desperate terms.",
+        "is_active": true
+      },
+      {
+        "id": "clock_generator",
+        "name": "Generator Charge",
+        "segments": 4,
+        "filled": 1,
+        "description": "The relay hub generator is running down",
+        "finisher": "The lights die for good: the relay hub is dead and the tunnels sink into darkness.",
+        "is_active": true
+      }
+    ],
+    "quests": [
+      {
+        "id": "quest_train",
+        "title": "Start the Last Train",
+        "description": "Find the fuel rods and start the train standing at North Platform.",
+        "status": "active",
+        "requiresItem": "Fuel Rod",
+        "objectives": [
+          { "text": "Inspect the relay hub", "completed": false },
+          { "text": "Recover a fuel rod", "completed": false },
+          { "text": "Start the engine", "completed": false }
+        ]
+      },
+      {
+        "id": "quest_water",
+        "title": "Clean Water",
+        "description": "Strike a deal with the Station for water for the tunnel folk.",
+        "status": "active"
+      }
+    ],
+    "npcs": [
+      {
+        "id": "npc_spark",
+        "name": "Spark",
+        "archetype": "Mechanic",
+        "personality": "Blunt, practical, trusts deeds over words",
+        "position": "Elbow-deep in a panel on the platform",
+        "active": true,
+        "notes": ["Fixes what others throw away"]
+      },
+      {
+        "id": "npc_mole",
+        "name": "Mole",
+        "archetype": "Defected raider",
+        "personality": "Nervous, fawning, knows the tunnels",
+        "position": "Huddling by the tunnel mouth",
+        "active": true,
+        "notes": ["Fled the raiders with a map"]
+      }
+    ],
+    "dice_rolls_enabled": true,
+    "created_at": "2026-10-07T00:00:00.000Z",
+    "genre": "post_apoc",
+    "ruleset": "pbta",
+    "resource_definitions": [
+      { "id": "hp", "name": "Health", "value": 20, "min": 0, "max": 20, "unit": "HP", "icon": "heart", "color": "emerald" },
+      { "id": "gold", "name": "Caps", "value": 15, "min": 0, "max": 999, "unit": "caps", "icon": "gold", "color": "amber" },
+      { "id": "battery", "name": "Charge", "value": 3, "min": 0, "max": 6, "unit": "cells", "icon": "zap", "color": "yellow" }
+    ],
+    "enabled_modules": { "clocks": true, "quests": true, "inventory": true, "dice": true, "resources": true, "factions": true, "abilities": true },
+    "factions": [
+      {
+        "id": "fac_station",
+        "name": "The Station",
+        "description": "A community of survivors holding the platform",
+        "reputation": 20,
+        "standing": "neutral",
+        "icon": "🚇",
+        "color": "#38bdf8",
+        "leader": "Warden Vera",
+        "headquarters": "North Platform",
+        "relations": { "fac_rust": "war" },
+        "perks": ["Water and shelter"],
+        "penalties": ["Exile to the surface"]
+      },
+      {
+        "id": "fac_rust",
+        "name": "The Rust",
+        "description": "A raider gang from the lower tunnels",
+        "reputation": -40,
+        "standing": "unfriendly",
+        "icon": "⚙️",
+        "color": "#ef4444",
+        "leader": "Pulley",
+        "headquarters": "The Depot",
+        "relations": { "fac_station": "war" },
+        "perks": ["Salvaged weaponry"],
+        "penalties": ["Hunted by patrols"]
+      }
+    ],
+    "abilities": [
+      {
+        "id": "abil_scrounge",
+        "name": "Scrounger",
+        "description": "Finds use where others see junk.",
+        "category": "survival",
+        "cooldownTurns": 3,
+        "currentCooldown": 0,
+        "effect": "Finds one small useful item",
+        "unlocked": true,
+        "tags": ["survival"],
+        "icon": "package"
+      },
+      {
+        "id": "abil_hotwire",
+        "name": "Hotwire",
+        "description": "Wake dead machinery with bare hands.",
+        "category": "tech",
+        "cooldownTurns": 2,
+        "currentCooldown": 0,
+        "cost": { "hp": 1 },
+        "effect": "Starts one mechanism without a key",
+        "unlocked": true,
+        "tags": ["tech"],
+        "icon": "zap"
+      }
+    ],
+    "world_context": "After the Catastrophe the surface is dead and life flickers on in the metro. The Station holds North Platform, the Rust holds the depot and the tunnels. The last train stands on the rails — dead, but whole.",
+    "starting_location": "North Platform",
+    "time_of_day": "Night",
+    "gm_tone": "Survival, rust, and neon",
+    "narrator_style": "Dry, sharp prose in the present tense",
+    "difficulty": "hard",
+    "optional_verbs": ["gold", "status", "skill", "rel", "npc", "npcdel", "move", "weather", "var"],
+    "npc_cap": 4,
+    "max_actor_depth": 3,
+    "lock_bg": false,
+    "conversation_method": "Local LLM",
+    "persona": "default",
+    "solo_mode": true,
+    "location_map": [
+      {
+        "name": "North Platform",
+        "keys": ["platform", "northern", "concourse"],
+        "bg": "assets/backgrounds/neon_alley.png",
+        "tier": 1,
+        "alertLevel": "normal",
+        "controllingFaction": "fac_station",
+        "description": "A lived-in platform: barrel fires, tents, a dead train on the rails."
+      },
+      {
+        "name": "The Humming Tunnel",
+        "keys": ["tunnel", "humming", "rails"],
+        "bg": "assets/backgrounds/dungeon.png",
+        "tier": 2,
+        "alertLevel": "heightened",
+        "controllingFaction": "fac_rust",
+        "description": "A dark stretch where something alive hums."
+      },
+      {
+        "name": "The Relay Hub",
+        "keys": ["relay", "server", "comms"],
+        "bg": "assets/backgrounds/server_farm.png",
+        "tier": 2,
+        "alertLevel": "normal",
+        "controllingFaction": "fac_station",
+        "description": "Blinking racks of the old hub: light and information live here."
+      }
+    ],
+    "start_state": {
+      "hp": 20,
+      "maxHp": 20,
+      "gold": 15,
+      "skills": { "Survival": 3, "Mechanics": 2, "Stealth": 2 },
+      "inventory": [
+        {
+          "id": "inv_lantern",
+          "name": "Lantern",
+          "quantity": 1,
+          "category": "tool",
+          "charges": 5,
+          "rechargeTurns": 4,
+          "description": "Warm light against tunnel dark.",
+          "tags": ["light"]
+        },
+        {
+          "id": "inv_canned",
+          "name": "Canned Food",
+          "quantity": 2,
+          "category": "consumable",
+          "description": "Pre-Catastrophe stew.",
+          "useEffect": "heal 6",
+          "tags": ["food"]
+        },
+        {
+          "id": "inv_pipe",
+          "name": "Pipe",
+          "quantity": 1,
+          "category": "weapon",
+          "slot": "main_hand",
+          "equipped": true,
+          "damage": "1d6+1",
+          "description": "Rusty but convincing."
+        },
+        {
+          "id": "inv_jacket",
+          "name": "Canvas Jacket",
+          "quantity": 1,
+          "category": "armor",
+          "slot": "armor",
+          "equipped": true,
+          "soak": 1,
+          "description": "Stops shrapnel and claws."
+        }
+      ],
+      "facts": [
+        { "key": "train_intact", "value": "The last train on the rails is whole but dead" },
+        { "key": "hum_in_tunnels", "value": "Something big and alive hums in the tunnels" }
+      ],
+      "location": "North Platform",
+      "timeOfDay": "Night",
+      "weather": "Dust and humming"
+    },
+    "beats": [
+      {
+        "id": "beat_1",
+        "text": "Learn the platform and the balance of power",
+        "kind": "discovery",
+        "status": "active",
+        "condition": "when turn above 0"
+      },
+      {
+        "id": "beat_2",
+        "text": "Recover a fuel rod",
+        "kind": "encounter",
+        "status": "active",
+        "condition": "when quest \"Start the Last Train\" active"
+      },
+      {
+        "id": "beat_3",
+        "text": "Start the train as the swarm closes in",
+        "kind": "climax",
+        "status": "active",
+        "condition": "when quest \"Start the Last Train\" done"
+      }
+    ],
+    "opening_narration": "Neon hisses over North Platform. The train stands dead, the tunnel breathes its hum, and Spark is already waving a wrench at you — she needs a second pair of hands at the panel.",
+    "first_message": "Spark: \"Late again and I'm going into that tunnel alone. Holding the lantern or holding the wrench?\""
+  },
+  "session": null
+}

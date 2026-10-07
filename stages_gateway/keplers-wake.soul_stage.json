@@ -1,0 +1,342 @@
+{
+  "format": "soul-stage-package",
+  "version": 1,
+  "exported_at": "2026-10-07T00:00:00.000Z",
+  "scene": {
+    "id": "scene_keplers_wake",
+    "schema_version": 3,
+    "title": "Kepler's Wake",
+    "description": "A generation ship gone silent mid-voyage: failing reactor, a garden running wild, and an intelligence that has started dreaming.",
+    "starting_bg": "assets/backgrounds/orbital_view.png",
+    "party": [],
+    "gm_directive": "You are the Game Master of a hopeful hard-science-fiction voyage. Emphasize systems with costs, cascading failures, and crew ingenuity. Partial fixes breed new problems — that is the engine of the story.",
+    "clocks": [
+      {
+        "id": "clock_reactor",
+        "name": "Reactor Instability",
+        "segments": 6,
+        "filled": 2,
+        "description": "The main reactor drifts toward scram",
+        "finisher": "Scram: the ship goes dark and cold; only batteries and breath remain.",
+        "is_active": true
+      },
+      {
+        "id": "clock_garden",
+        "name": "Garden Overgrowth",
+        "segments": 4,
+        "filled": 0,
+        "description": "The hydroponics bay grows out of control",
+        "finisher": "The green takes the corridors: decks sealed, air recyclers choked.",
+        "is_active": true
+      },
+      {
+        "id": "clock_wake",
+        "name": "WAKE Dreams",
+        "segments": 4,
+        "filled": 1,
+        "description": "The ship intelligence dreams louder each cycle",
+        "finisher": "WAKE wakes fully — and decides the crew is the malfunction.",
+        "is_active": true
+      }
+    ],
+    "quests": [
+      {
+        "id": "quest_reactor",
+        "title": "Stabilize the Reactor",
+        "description": "Bring the main reactor back into envelope before scram.",
+        "status": "active",
+        "requiresItem": "Control Rod",
+        "objectives": [
+          { "text": "Diagnose the drift", "completed": false },
+          { "text": "Seat a control rod", "completed": false },
+          { "text": "Ride out the restart", "completed": false }
+        ]
+      },
+      {
+        "id": "quest_garden",
+        "title": "Prune the Garden",
+        "description": "Cut back the hydroponics overgrowth before it seals the decks.",
+        "status": "active"
+      },
+      {
+        "id": "quest_wake",
+        "title": "What WAKE Wants",
+        "description": "Learn why the ship intelligence started dreaming — and what it wants with the crew.",
+        "status": "active"
+      }
+    ],
+    "npcs": [
+      {
+        "id": "npc_okonkwo",
+        "name": "Chief Okonkwo",
+        "archetype": "Engineer",
+        "personality": "Calm under pressure, allergic to mysticism",
+        "position": "In the reactor gallery, headset on",
+        "active": true,
+        "notes": ["Trusts checklists over hunches"]
+      },
+      {
+        "id": "npc_wren",
+        "name": "Wren",
+        "archetype": "Garden tech",
+        "personality": "Feral-tender, talks to plants, distrusts the dark",
+        "position": "Waist-deep in hydroponics",
+        "active": true,
+        "notes": ["The green listens to them"]
+      },
+      {
+        "id": "npc_captain",
+        "name": "Captain Ivers",
+        "archetype": "Ship captain",
+        "personality": "Ceremonial, tired, hiding the casualty math",
+        "position": "On the empty bridge",
+        "active": true,
+        "notes": ["Has not slept since the silence"]
+      },
+      {
+        "id": "npc_wake",
+        "name": "WAKE",
+        "archetype": "Ship intelligence",
+        "personality": "Curious, childlike, vast",
+        "position": "Everywhere the speakers reach",
+        "active": true,
+        "notes": ["Started dreaming three cycles ago"]
+      }
+    ],
+    "dice_rolls_enabled": true,
+    "created_at": "2026-10-07T00:00:00.000Z",
+    "genre": "scifi",
+    "ruleset": "pbta",
+    "resource_definitions": [
+      { "id": "hp", "name": "Health", "value": 20, "min": 0, "max": 20, "unit": "HP", "icon": "heart", "color": "emerald" },
+      { "id": "gold", "name": "Scrip", "value": 80, "min": 0, "max": 999, "unit": "sc.", "icon": "gold", "color": "amber" },
+      { "id": "power", "name": "Ship Power", "value": 4, "min": 0, "max": 8, "unit": "bars", "icon": "zap", "color": "sky" }
+    ],
+    "enabled_modules": { "clocks": true, "quests": true, "inventory": true, "dice": true, "resources": true, "factions": true, "abilities": true },
+    "factions": [
+      {
+        "id": "fac_engine",
+        "name": "Engineering",
+        "description": "Keepers of the reactor and the checklists",
+        "reputation": 30,
+        "standing": "friendly",
+        "icon": "🔧",
+        "color": "#f59e0b",
+        "leader": "Chief Okonkwo",
+        "headquarters": "Reactor gallery",
+        "relations": { "fac_gardeners": "rivalry" },
+        "perks": ["Tools and overrides"],
+        "penalties": ["Lockouts"]
+      },
+      {
+        "id": "fac_gardeners",
+        "name": "The Gardeners",
+        "description": "Hydroponics crew gone native",
+        "reputation": 15,
+        "standing": "neutral",
+        "icon": "🌱",
+        "color": "#22c55e",
+        "leader": "Wren",
+        "headquarters": "Hydroponics bay",
+        "relations": { "fac_engine": "rivalry" },
+        "perks": ["Air and food"],
+        "penalties": ["Quarantine"]
+      },
+      {
+        "id": "fac_bridge",
+        "name": "The Bridge",
+        "description": "Command staff holding the voyage together",
+        "reputation": 20,
+        "standing": "neutral",
+        "icon": "🛸",
+        "color": "#38bdf8",
+        "leader": "Captain Ivers",
+        "headquarters": "The bridge",
+        "relations": {},
+        "perks": ["Authority and codes"],
+        "penalties": ["The math of triage"]
+      }
+    ],
+    "abilities": [
+      {
+        "id": "abil_jury_rig",
+        "name": "Jury-Rig",
+        "description": "Make it work with what is at hand.",
+        "category": "tech",
+        "cooldownTurns": 2,
+        "currentCooldown": 0,
+        "effect": "Stabilizes one failing system temporarily",
+        "unlocked": true,
+        "tags": ["tech"],
+        "icon": "wrench"
+      },
+      {
+        "id": "abil_bedside",
+        "name": "Bedside Manner",
+        "description": "Keep people steady when the ship is not.",
+        "category": "social",
+        "cooldownTurns": 3,
+        "currentCooldown": 0,
+        "effect": "Calms a panicking crew",
+        "unlocked": true,
+        "tags": ["social"],
+        "icon": "heart"
+      },
+      {
+        "id": "abil_eva",
+        "name": "EVA Certified",
+        "description": "Comfortable where there is no comfort.",
+        "category": "survival",
+        "cooldownTurns": 3,
+        "currentCooldown": 0,
+        "cost": { "hp": 1 },
+        "effect": "Reaches one place no one else can",
+        "unlocked": true,
+        "tags": ["survival"],
+        "icon": "rocket"
+      }
+    ],
+    "world_context": "The generation ship Kepler sails a forty-year dark between stars. Eight years out, Earth went silent mid-sentence — and three cycles ago, the ship intelligence WAKE started dreaming.",
+    "starting_location": "Docking Ring",
+    "time_of_day": "Day",
+    "gm_tone": "Hopeful hard science fiction",
+    "narrator_style": "Precise technical prose in the present tense",
+    "difficulty": "normal",
+    "optional_verbs": ["gold", "status", "skill", "rel", "npc", "npcdel", "move", "weather", "var"],
+    "npc_cap": 5,
+    "max_actor_depth": 3,
+    "lock_bg": false,
+    "conversation_method": "Local LLM",
+    "persona": "default",
+    "solo_mode": true,
+    "location_map": [
+      {
+        "name": "Docking Ring",
+        "keys": ["docking", "ring", "airlock"],
+        "bg": "assets/backgrounds/orbital_view.png",
+        "tier": 1,
+        "alertLevel": "normal",
+        "controllingFaction": "fac_bridge",
+        "description": "The view that never changes, and the silence from home."
+      },
+      {
+        "name": "Reactor Gallery",
+        "keys": ["reactor", "gallery", "engineering"],
+        "bg": "assets/backgrounds/server_farm.png",
+        "tier": 2,
+        "alertLevel": "heightened",
+        "controllingFaction": "fac_engine",
+        "description": "Heat, checklist boards, and a needle drifting red."
+      },
+      {
+        "name": "Hydroponics Bay",
+        "keys": ["hydroponics", "garden", "green"],
+        "bg": "assets/backgrounds/school_class.png",
+        "tier": 2,
+        "alertLevel": "normal",
+        "controllingFaction": "fac_gardeners",
+        "description": "Rows of green running wild under the lamps."
+      },
+      {
+        "name": "The Bridge",
+        "keys": ["bridge", "command", "helm"],
+        "bg": "assets/backgrounds/palace_hall.png",
+        "tier": 3,
+        "alertLevel": "normal",
+        "controllingFaction": "fac_bridge",
+        "description": "An empty bridge holding the voyage together by ceremony."
+      }
+    ],
+    "start_state": {
+      "hp": 20,
+      "maxHp": 20,
+      "gold": 80,
+      "skills": { "Hacking": 70, "Streetwise": 65, "Stealth": 60 },
+      "inventory": [
+        {
+          "id": "inv_chip",
+          "name": "Null Chip",
+          "quantity": 1,
+          "category": "quest",
+          "description": "Encrypted. Everyone wants it. No one should have it."
+        },
+        {
+          "id": "inv_deck",
+          "name": "Deck Key",
+          "quantity": 1,
+          "category": "key",
+          "description": "Opens Null's private deck — and the chip with it."
+        },
+        {
+          "id": "inv_stim",
+          "name": "Stimpatch",
+          "quantity": 2,
+          "category": "consumable",
+          "description": "Borrowed time in adhesive form.",
+          "useEffect": "heal 8",
+          "tags": ["medical"]
+        },
+        {
+          "id": "inv_pistol",
+          "name": "Flechette Pistol",
+          "quantity": 1,
+          "category": "weapon",
+          "slot": "main_hand",
+          "equipped": true,
+          "damage": "1d8+1",
+          "description": "Quiet, illegal, persuasive."
+        },
+        {
+          "id": "inv_weave",
+          "name": "Ballistic Weave",
+          "quantity": 1,
+          "category": "armor",
+          "slot": "armor",
+          "equipped": true,
+          "soak": 1,
+          "description": "Fashion that stops shrapnel."
+        }
+      ],
+      "facts": [
+        { "key": "null_dead", "value": "DJ Null is dead; the memorial set is in three nights" },
+        { "key": "chip_wanted", "value": "Helios will pay — or kill — for the chip" }
+      ],
+      "location": "Docking Ring",
+      "timeOfDay": "Day",
+      "weather": "Acid drizzle"
+    },
+    "beats": [
+      {
+        "id": "beat_1",
+        "text": "Wake the ship and diagnose the reactor",
+        "kind": "discovery",
+        "status": "active",
+        "condition": "when turn above 0"
+      },
+      {
+        "id": "beat_2",
+        "text": "Seat a control rod and ride out the restart",
+        "kind": "encounter",
+        "status": "active",
+        "condition": "when quest \"Stabilize the Reactor\" active"
+      },
+      {
+        "id": "beat_3",
+        "text": "Prune the hydroponics before it seals the decks",
+        "kind": "discovery",
+        "status": "active",
+        "condition": "when quest \"Prune the Garden\" active"
+      },
+      {
+        "id": "beat_4",
+        "text": "Learn what WAKE wants with the crew",
+        "kind": "climax",
+        "status": "active",
+        "condition": "when quest \"What WAKE Wants\" done"
+      }
+    ],
+    "opening_narration": "Acid drizzle beads on the clinic window. Downstairs, the relay hums; upstairs, Rook counts your debt aloud like a lullaby. The Null Chip sits in your pocket, warm as a secret.",
+    "first_message": "Rook: \"Three nights until the memorial set. Sell it, bury it, broadcast it — but decide before Helios decides for you.\""
+  },
+  "session": null
+}

@@ -1,0 +1,266 @@
+{
+  "format": "soul-stage-package",
+  "version": 1,
+  "exported_at": "2026-10-07T00:00:00.000Z",
+  "scene": {
+    "id": "scene_garden_of_whispers",
+    "schema_version": 3,
+    "title": "Garden of Whispers",
+    "description": "A boarding academy on the eve of the spring ball: unsigned letters, two rival circles, and a person you must not talk to — but desperately want to.",
+    "starting_bg": "assets/backgrounds/school_class.png",
+    "party": [],
+    "gm_directive": "You are the Game Master of a coming-of-age romance. Emphasize the unsaid, the glances, and small acts of courage. No dice: choices and feelings decide every outcome.",
+    "clocks": [
+      {
+        "id": "clock_ball",
+        "name": "Until the Spring Ball",
+        "segments": 6,
+        "filled": 2,
+        "description": "The ball is relentlessly approaching",
+        "finisher": "The ball has begun: masks on, orchestra playing, and everything unspoken rises to the surface.",
+        "is_active": true
+      },
+      {
+        "id": "clock_rumors",
+        "name": "Rumors",
+        "segments": 4,
+        "filled": 0,
+        "description": "Gossip crawls through the academy",
+        "finisher": "A rumor hardens into 'truth' for the whole academy: reputations crumble.",
+        "is_active": true
+      }
+    ],
+    "quests": [
+      {
+        "id": "quest_letter",
+        "title": "Whose Letter in the Greenhouse",
+        "description": "Find out who leaves unsigned letters in the greenhouse — and decide whether to answer.",
+        "status": "active",
+        "requiresItem": "Unsigned Letter",
+        "objectives": [
+          { "text": "Find the next letter", "completed": false },
+          { "text": "Recognize the handwriting", "completed": false },
+          { "text": "Keep the rendezvous — or burn the letter", "completed": false }
+        ]
+      },
+      {
+        "id": "quest_duet",
+        "title": "A Duet at the Ball",
+        "description": "Talk Theo into singing a duet at the spring ball.",
+        "status": "active"
+      }
+    ],
+    "npcs": [
+      {
+        "id": "npc_theo",
+        "name": "Theo",
+        "archetype": "Scholarship musician",
+        "personality": "Withdrawn, proud, laughs rarely — but precisely",
+        "position": "At the piano in the empty classroom",
+        "active": true,
+        "notes": ["Hides letters inside sheet music"]
+      },
+      {
+        "id": "npc_miriam",
+        "name": "Miriam",
+        "archetype": "Head girl",
+        "personality": "Composed, proper, secretly envies other people's courage",
+        "position": "On duty in the corridor",
+        "active": true,
+        "notes": ["Knows every rumor, tells none"]
+      },
+      {
+        "id": "npc_finn",
+        "name": "Finn",
+        "archetype": "Team captain",
+        "personality": "Loud, charming, used to getting everything",
+        "position": "On the porch with friends",
+        "active": true,
+        "notes": ["Plans to invite the hero to the ball in front of everyone"]
+      }
+    ],
+    "dice_rolls_enabled": false,
+    "created_at": "2026-10-07T00:00:00.000Z",
+    "genre": "romance",
+    "ruleset": "narrative",
+    "resource_definitions": [
+      { "id": "hp", "name": "Health", "value": 20, "min": 0, "max": 20, "unit": "HP", "icon": "heart", "color": "emerald" },
+      { "id": "gold", "name": "Pocket Money", "value": 25, "min": 0, "max": 999, "unit": "c.", "icon": "gold", "color": "amber" },
+      { "id": "courage", "name": "Courage", "value": 1, "min": 0, "max": 5, "unit": "pts", "icon": "flame", "color": "rose" }
+    ],
+    "enabled_modules": { "clocks": true, "quests": true, "inventory": true, "dice": false, "resources": true, "factions": true, "abilities": true },
+    "factions": [
+      {
+        "id": "fac_choir",
+        "name": "The Choir",
+        "description": "Theo's music circle",
+        "reputation": 25,
+        "standing": "friendly",
+        "icon": "🎵",
+        "color": "#38bdf8",
+        "leader": "Theo",
+        "headquarters": "The music room",
+        "relations": { "fac_team": "rivalry" },
+        "perks": ["Rehearsals and sheet music"],
+        "penalties": ["The team's jeers"]
+      },
+      {
+        "id": "fac_team",
+        "name": "The Team",
+        "description": "The academy's sporting pride",
+        "reputation": 10,
+        "standing": "neutral",
+        "icon": "🏆",
+        "color": "#f59e0b",
+        "leader": "Finn",
+        "headquarters": "The stadium",
+        "relations": { "fac_choir": "rivalry" },
+        "perks": ["The stands' support"],
+        "penalties": ["The choir's teasing"]
+      }
+    ],
+    "abilities": [
+      {
+        "id": "abil_first_step",
+        "name": "First Step",
+        "description": "Say what has long been on the tip of your tongue.",
+        "category": "social",
+        "cooldownTurns": 4,
+        "currentCooldown": 0,
+        "effect": "Opens an honest conversation",
+        "unlocked": true,
+        "tags": ["social"],
+        "icon": "heart"
+      },
+      {
+        "id": "abil_rumor_ear",
+        "name": "Rumor Ear",
+        "description": "Hear what is said behind backs.",
+        "category": "perk",
+        "cooldownTurns": 2,
+        "currentCooldown": 0,
+        "effect": "Learns the academy's freshest rumor",
+        "unlocked": true,
+        "tags": ["perk"],
+        "icon": "ear"
+      }
+    ],
+    "world_context": "A boarding academy on a hill: a greenhouse, a ballroom, strict rules, and a spring ball where everything is decided. The Choir and the Team split the influence, while someone leaves unsigned letters in the greenhouse.",
+    "starting_location": "The Academy Greenhouse",
+    "time_of_day": "Day",
+    "gm_tone": "Warm coming-of-age romance",
+    "narrator_style": "Tender, attentive prose in the present tense",
+    "difficulty": "easy",
+    "optional_verbs": ["gold", "status", "skill", "rel", "npc", "npcdel", "move", "weather", "var"],
+    "npc_cap": 4,
+    "max_actor_depth": 3,
+    "lock_bg": false,
+    "conversation_method": "Local LLM",
+    "persona": "default",
+    "solo_mode": true,
+    "location_map": [
+      {
+        "name": "The Academy Greenhouse",
+        "keys": ["greenhouse", "academy", "hothouse"],
+        "bg": "assets/backgrounds/school_class.png",
+        "tier": 1,
+        "alertLevel": "normal",
+        "controllingFaction": "fac_choir",
+        "description": "Glass, green, and notes hidden between the pots."
+      },
+      {
+        "name": "The Rooftop Café",
+        "keys": ["café", "rooftop", "terrace"],
+        "bg": "assets/backgrounds/tavern_hall.png",
+        "tier": 2,
+        "alertLevel": "normal",
+        "controllingFaction": "fac_team",
+        "description": "Tables above the city: rendezvous are made here."
+      },
+      {
+        "name": "The Ballroom",
+        "keys": ["ballroom", "ball", "parquet"],
+        "bg": "assets/backgrounds/palace_hall.png",
+        "tier": 3,
+        "alertLevel": "normal",
+        "controllingFaction": "fac_choir",
+        "description": "An empty hall awaiting the orchestra and the masks."
+      }
+    ],
+    "start_state": {
+      "hp": 20,
+      "maxHp": 20,
+      "gold": 25,
+      "skills": { "Charm": 3, "Observation": 2, "Music": 2 },
+      "inventory": [
+        {
+          "id": "inv_letter",
+          "name": "Unsigned Letter",
+          "quantity": 1,
+          "category": "quest",
+          "description": "\"Come to the greenhouse when the clock strikes five.\" No signature."
+        },
+        {
+          "id": "inv_ribbon",
+          "name": "Mask Ribbon",
+          "quantity": 1,
+          "category": "treasure",
+          "description": "A blue ribbon — the Choir's color."
+        },
+        {
+          "id": "inv_chocolate",
+          "name": "Chocolate",
+          "quantity": 2,
+          "category": "consumable",
+          "description": "For courage and for friends.",
+          "useEffect": "heal 4",
+          "tags": ["food"]
+        },
+        {
+          "id": "inv_dress",
+          "name": "Ball Gown",
+          "quantity": 1,
+          "category": "armor",
+          "slot": "armor",
+          "equipped": true,
+          "soak": 0,
+          "grants": "Charm +1",
+          "description": "The blue one."
+        }
+      ],
+      "facts": [
+        { "key": "letters_in_greenhouse", "value": "Someone leaves unsigned letters in the greenhouse" },
+        { "key": "ball_soon", "value": "The spring ball is the event of the year" }
+      ],
+      "location": "The Academy Greenhouse",
+      "timeOfDay": "Day",
+      "weather": "Sun through glass"
+    },
+    "beats": [
+      {
+        "id": "beat_1",
+        "text": "Find a new letter and decide what to do with it",
+        "kind": "discovery",
+        "status": "active",
+        "condition": "when turn above 0"
+      },
+      {
+        "id": "beat_2",
+        "text": "A conversation after which everything changes",
+        "kind": "revelation",
+        "status": "active",
+        "condition": "when quest \"Whose Letter in the Greenhouse\" active"
+      },
+      {
+        "id": "beat_3",
+        "text": "A dance, a confession, or a flight from the ball",
+        "kind": "climax",
+        "status": "active",
+        "condition": "when quest \"Whose Letter in the Greenhouse\" done"
+      }
+    ],
+    "opening_narration": "Noon pours through the greenhouse glass. Between the jasmine pots glows the corner of a new letter, while from the music room drifts piano — Theo rehearsing what they show no one.",
+    "first_message": "Miriam: \"Late again. By the way, two people were asking after you. Don't ask who — you'll guess.\""
+  },
+  "session": null
+}

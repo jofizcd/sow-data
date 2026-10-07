@@ -1,0 +1,266 @@
+{
+  "format": "soul-stage-package",
+  "version": 1,
+  "exported_at": "2026-10-07T00:00:00.000Z",
+  "scene": {
+    "id": "scene_midnight_airship",
+    "schema_version": 3,
+    "title": "The Midnight Airship Case",
+    "description": "Gaslight, rain, and contraband: the airship Meridian lifts off at midnight — carrying cargo that should not exist.",
+    "starting_bg": "assets/backgrounds/rainy_night_street.png",
+    "party": [],
+    "gm_directive": "You are the Game Master of an airship-era detective story. Emphasize clues, motives, and false leads: every scene should yield a lead or take away a certainty.",
+    "clocks": [
+      {
+        "id": "clock_departure",
+        "name": "The Meridian Departs",
+        "segments": 6,
+        "filled": 2,
+        "description": "The airship lifts off at midnight",
+        "finisher": "The Meridian slips into the night with cargo and truth aboard. The case is lost.",
+        "is_active": true
+      },
+      {
+        "id": "clock_suspicion",
+        "name": "Police Suspicion",
+        "segments": 4,
+        "filled": 0,
+        "description": "The police are watching the hero",
+        "finisher": "The inspector arrests the hero as a smuggler's accomplice.",
+        "is_active": true
+      }
+    ],
+    "quests": [
+      {
+        "id": "quest_cargo",
+        "title": "What Is in the Meridian's Hold",
+        "description": "Prove the airship carries forbidden cargo and stop the departure.",
+        "status": "active",
+        "requiresItem": "Waybill",
+        "objectives": [
+          { "text": "Question the mechanic", "completed": false },
+          { "text": "Find the waybill", "completed": false },
+          { "text": "Stop the liftoff", "completed": false }
+        ]
+      },
+      {
+        "id": "quest_informant",
+        "title": "Protect the Informant",
+        "description": "Shelter the dock boy who witnessed the loading.",
+        "status": "active"
+      }
+    ],
+    "npcs": [
+      {
+        "id": "npc_inspector",
+        "name": "Inspector Grave",
+        "archetype": "Policeman",
+        "personality": "Weary, honest, cannot stand amateurs",
+        "position": "At the mooring, under an umbrella",
+        "active": true,
+        "notes": ["Running an investigation of their own"]
+      },
+      {
+        "id": "npc_mechanic",
+        "name": "Fanni the Mechanic",
+        "archetype": "Airship mechanic",
+        "personality": "Chatty, greedy for gossip and coins",
+        "position": "By the Meridian's gondola",
+        "active": true,
+        "notes": ["Knows what was loaded at night"]
+      },
+      {
+        "id": "npc_urchin",
+        "name": "Pip",
+        "archetype": "Dock boy",
+        "personality": "Quick, frightened, loyal to the kind",
+        "position": "Hiding behind the barrels",
+        "active": true,
+        "notes": ["Saw the night loading"]
+      }
+    ],
+    "dice_rolls_enabled": true,
+    "created_at": "2026-10-07T00:00:00.000Z",
+    "genre": "detective",
+    "ruleset": "d100",
+    "resource_definitions": [
+      { "id": "hp", "name": "Health", "value": 20, "min": 0, "max": 20, "unit": "HP", "icon": "heart", "color": "emerald" },
+      { "id": "gold", "name": "Shillings", "value": 40, "min": 0, "max": 999, "unit": "sh.", "icon": "gold", "color": "amber" },
+      { "id": "clues", "name": "Clues", "value": 0, "min": 0, "max": 10, "unit": "pcs", "icon": "search", "color": "sky" }
+    ],
+    "enabled_modules": { "clocks": true, "quests": true, "inventory": true, "dice": true, "resources": true, "factions": true, "abilities": true },
+    "factions": [
+      {
+        "id": "fac_police",
+        "name": "River Police",
+        "description": "Keepers of the moorings and the peace",
+        "reputation": 15,
+        "standing": "neutral",
+        "icon": "🚔",
+        "color": "#38bdf8",
+        "leader": "Inspector Grave",
+        "headquarters": "The mooring station house",
+        "relations": { "fac_smugglers": "war" },
+        "perks": ["Access to reports"],
+        "penalties": ["Arrest"]
+      },
+      {
+        "id": "fac_smugglers",
+        "name": "Night Pilots",
+        "description": "Airship contraband runners",
+        "reputation": -20,
+        "standing": "unfriendly",
+        "icon": "🌙",
+        "color": "#8b5cf6",
+        "leader": "Captain Vane",
+        "headquarters": "The Meridian",
+        "relations": { "fac_police": "war" },
+        "perks": ["Secret routes"],
+        "penalties": ["A knife in the dark"]
+      }
+    ],
+    "abilities": [
+      {
+        "id": "abil_deduction",
+        "name": "Deduction",
+        "description": "Fit scattered clues into a picture.",
+        "category": "social",
+        "cooldownTurns": 3,
+        "currentCooldown": 0,
+        "effect": "Connects two known clues into a conclusion",
+        "unlocked": true,
+        "tags": ["social"],
+        "icon": "brain"
+      },
+      {
+        "id": "abil_shadow",
+        "name": "Shadow",
+        "description": "Vanish into crowds and rain.",
+        "category": "stealth",
+        "cooldownTurns": 2,
+        "currentCooldown": 0,
+        "effect": "Hides the hero from watchers for a scene",
+        "unlocked": true,
+        "tags": ["stealth"],
+        "icon": "eye"
+      }
+    ],
+    "world_context": "A river city lives by airships: mail, freight, contraband. The Meridian is the pride of the line — but its hold is sealed, its crew silent, and liftoff is set for midnight.",
+    "starting_location": "The Airship Mooring",
+    "time_of_day": "Night",
+    "gm_tone": "Noir detective",
+    "narrator_style": "Restrained noir prose in the present tense",
+    "difficulty": "normal",
+    "optional_verbs": ["gold", "status", "skill", "rel", "npc", "npcdel", "move", "weather", "var"],
+    "npc_cap": 4,
+    "max_actor_depth": 3,
+    "lock_bg": false,
+    "conversation_method": "Local LLM",
+    "persona": "default",
+    "solo_mode": true,
+    "location_map": [
+      {
+        "name": "The Airship Mooring",
+        "keys": ["mooring", "airship", "mast"],
+        "bg": "assets/backgrounds/rainy_night_street.png",
+        "tier": 1,
+        "alertLevel": "normal",
+        "controllingFaction": "fac_police",
+        "description": "Wet slabs, gas lamps, and the Meridian's shadow overhead."
+      },
+      {
+        "name": "The Detective's Office",
+        "keys": ["office", "detective", "loupe"],
+        "bg": "assets/backgrounds/tavern_room.png",
+        "tier": 2,
+        "alertLevel": "normal",
+        "controllingFaction": "fac_police",
+        "description": "A cramped room: a city map, a loupe, cold tea, and case files."
+      },
+      {
+        "name": "The Brass Gear Café",
+        "keys": ["café", "gear", "brass"],
+        "bg": "assets/backgrounds/tavern_hall.png",
+        "tier": 2,
+        "alertLevel": "heightened",
+        "controllingFaction": "fac_smugglers",
+        "description": "A pilots' dive trading in rumors and silence."
+      }
+    ],
+    "start_state": {
+      "hp": 20,
+      "maxHp": 20,
+      "gold": 40,
+      "skills": { "Deduction": 75, "Stealth": 60, "Eloquence": 55 },
+      "inventory": [
+        {
+          "id": "inv_loupe",
+          "name": "Loupe",
+          "quantity": 1,
+          "category": "tool",
+          "grants": "Deduction +1",
+          "description": "Sees what is hidden."
+        },
+        {
+          "id": "inv_notebook",
+          "name": "Notebook",
+          "quantity": 1,
+          "category": "tool",
+          "description": "Clues in tiny handwriting."
+        },
+        {
+          "id": "inv_coat",
+          "name": "Coat",
+          "quantity": 1,
+          "category": "armor",
+          "slot": "armor",
+          "equipped": true,
+          "soak": 1,
+          "description": "Heavy wool against rain and knives."
+        },
+        {
+          "id": "inv_brandy",
+          "name": "Brandy Flask",
+          "quantity": 1,
+          "category": "consumable",
+          "description": "For nerves and for informants.",
+          "useEffect": "heal 4",
+          "tags": ["drink"]
+        }
+      ],
+      "facts": [
+        { "key": "meridian_at_midnight", "value": "The airship Meridian lifts off at midnight" },
+        { "key": "hold_sealed", "value": "The Meridian's hold is sealed and its crew silent" }
+      ],
+      "location": "The Airship Mooring",
+      "timeOfDay": "Night",
+      "weather": "Rain"
+    },
+    "beats": [
+      {
+        "id": "beat_1",
+        "text": "Work the mooring and find the first lead",
+        "kind": "discovery",
+        "status": "active",
+        "condition": "when turn above 0"
+      },
+      {
+        "id": "beat_2",
+        "text": "Recover the cargo waybill",
+        "kind": "discovery",
+        "status": "active",
+        "condition": "when quest \"What Is in the Meridian's Hold\" active"
+      },
+      {
+        "id": "beat_3",
+        "text": "Stop the Meridian's liftoff",
+        "kind": "climax",
+        "status": "active",
+        "condition": "when quest \"What Is in the Meridian's Hold\" done"
+      }
+    ],
+    "opening_narration": "Rain lashes the mooring. Overhead hangs the Meridian like a whale carcass — ropes taut, gondola lit. Three hours to midnight, and somewhere in this dark hides a boy who watched the loading.",
+    "first_message": "Grave: \"Came to watch the truth leave too? Keep clear of the ropes — and of my people as well.\""
+  },
+  "session": null
+}

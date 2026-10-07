@@ -1,0 +1,342 @@
+{
+  "format": "soul-stage-package",
+  "version": 1,
+  "exported_at": "2026-10-07T00:00:00.000Z",
+  "scene": {
+    "id": "scene_tidefall_spire",
+    "schema_version": 3,
+    "title": "Tidefall Spire",
+    "description": "A drowned wizard's spire rising from a storm-lashed sea: tide-locked vaults, a mutinous crew, and a bell that rings once before every wreck.",
+    "starting_bg": "assets/backgrounds/rainy_night_street.png",
+    "party": [],
+    "gm_directive": "You are the Game Master of a seafaring fantasy adventure. Emphasize the sea as a living pressure: tides, storms, debts, and things that surface when the bell rings.",
+    "clocks": [
+      {
+        "id": "clock_tide",
+        "name": "The Turning Tide",
+        "segments": 6,
+        "filled": 1,
+        "description": "The vaults flood when the tide turns",
+        "finisher": "The sea takes the lower halls: vault doors seal and the way down is drowned.",
+        "is_active": true
+      },
+      {
+        "id": "clock_mutiny",
+        "name": "Crew Mutiny",
+        "segments": 4,
+        "filled": 0,
+        "description": "The crew's patience with the expedition wears thin",
+        "finisher": "The crew seizes the boat and strands the hero on the spire rock.",
+        "is_active": true
+      },
+      {
+        "id": "clock_bell",
+        "name": "The Third Ringing",
+        "segments": 4,
+        "filled": 2,
+        "description": "The drowned bell has rung twice",
+        "finisher": "The third ringing: something vast surfaces beneath the spire.",
+        "is_active": true
+      }
+    ],
+    "quests": [
+      {
+        "id": "quest_chart",
+        "title": "The Tide Chart",
+        "description": "Recover the drowned wizard's tide chart from the flooded vaults before the tide turns.",
+        "status": "active",
+        "requiresItem": "Brass Diving Bell",
+        "objectives": [
+          { "text": "Reach the vault stairs", "completed": false },
+          { "text": "Dive the flooded archive", "completed": false },
+          { "text": "Escape before high water", "completed": false }
+        ]
+      },
+      {
+        "id": "quest_crew",
+        "title": "Hold the Crew Together",
+        "description": "Keep the crew from mutiny until the expedition is done.",
+        "status": "active"
+      },
+      {
+        "id": "quest_bell",
+        "title": "Silence the Bell",
+        "description": "Find what rings the drowned bell — and end it.",
+        "status": "active"
+      }
+    ],
+    "npcs": [
+      {
+        "id": "npc_captain",
+        "name": "Captain Ilsa Vane",
+        "archetype": "Sea captain",
+        "personality": "Iron-willed, superstitious, pays debts in full",
+        "position": "On the shingle below the spire, by the boat",
+        "active": true,
+        "notes": ["Lost two crews to these waters"]
+      },
+      {
+        "id": "npc_scholar",
+        "name": "Magister Pell",
+        "archetype": "Drowned scholar",
+        "personality": "Half-mad, brilliant, hears the bell even in silence",
+        "position": "Camped in the gatehouse arch",
+        "active": true,
+        "notes": ["Can read the tide marks"]
+      },
+      {
+        "id": "npc_boatswain",
+        "name": "Boatswain Rok",
+        "archetype": "Mutinous sailor",
+        "personality": "Loud, aggrieved, counting shares that do not exist",
+        "position": "Among the crew tents",
+        "active": true,
+        "notes": ["Sharpening more than rigging knives"]
+      },
+      {
+        "id": "npc_diver",
+        "name": "Sella the Diver",
+        "archetype": "Pearl diver",
+        "personality": "Calm, fatalistic, at home below the surface",
+        "position": "Mending nets by the tide pools",
+        "active": true,
+        "notes": ["Owes the captain her life"]
+      }
+    ],
+    "dice_rolls_enabled": true,
+    "created_at": "2026-10-07T00:00:00.000Z",
+    "genre": "fantasy",
+    "ruleset": "d20",
+    "resource_definitions": [
+      { "id": "hp", "name": "Health", "value": 22, "min": 0, "max": 22, "unit": "HP", "icon": "heart", "color": "emerald" },
+      { "id": "gold", "name": "Gold", "value": 50, "min": 0, "max": 999, "unit": "◈", "icon": "gold", "color": "amber" },
+      { "id": "rum", "name": "Rum Ration", "value": 3, "min": 0, "max": 6, "unit": "fl.", "icon": "flask", "color": "amber" }
+    ],
+    "enabled_modules": { "clocks": true, "quests": true, "inventory": true, "dice": true, "resources": true, "factions": true, "abilities": true },
+    "factions": [
+      {
+        "id": "fac_crew",
+        "name": "The Gullwing Crew",
+        "description": "Captain Vane's sailors, owed and restless",
+        "reputation": 25,
+        "standing": "friendly",
+        "icon": "⚓",
+        "color": "#38bdf8",
+        "leader": "Captain Ilsa Vane",
+        "headquarters": "The beached longboat",
+        "relations": { "fac_wreckers": "war" },
+        "perks": ["Seamanship and boats"],
+        "penalties": ["Mutiny"]
+      },
+      {
+        "id": "fac_wreckers",
+        "name": "The Wreckers",
+        "description": "Coast scavengers who light false beacons",
+        "reputation": -35,
+        "standing": "unfriendly",
+        "icon": "🔥",
+        "color": "#ef4444",
+        "leader": "One-Eyed Sabb",
+        "headquarters": "The signal cave",
+        "relations": { "fac_crew": "war" },
+        "perks": ["Salvage and ambushes"],
+        "penalties": ["No quarter given"]
+      },
+      {
+        "id": "fac_tidewardens",
+        "name": "The Tidewardens",
+        "description": "A drowned order guarding the spire's secrets",
+        "reputation": 0,
+        "standing": "neutral",
+        "icon": "🌊",
+        "color": "#8b5cf6",
+        "leader": "Unknown",
+        "headquarters": "Tidefall Spire",
+        "relations": {},
+        "perks": ["Tide lore"],
+        "penalties": ["The bell's attention"]
+      }
+    ],
+    "abilities": [
+      {
+        "id": "abil_sea_legs",
+        "name": "Sea Legs",
+        "description": "Balance and nerve on any deck or cliff.",
+        "category": "survival",
+        "cooldownTurns": 2,
+        "currentCooldown": 0,
+        "effect": "Ignores hazardous footing for a scene",
+        "unlocked": true,
+        "tags": ["survival"],
+        "icon": "anchor"
+      },
+      {
+        "id": "abil_tide_reading",
+        "name": "Tide Reading",
+        "description": "Read water like a letter.",
+        "category": "perk",
+        "cooldownTurns": 3,
+        "currentCooldown": 0,
+        "effect": "Learns what the next tide will uncover",
+        "unlocked": true,
+        "tags": ["perk"],
+        "icon": "waves"
+      },
+      {
+        "id": "abil_board",
+        "name": "Boarding Action",
+        "description": "First across, blade out.",
+        "category": "combat",
+        "cooldownTurns": 3,
+        "currentCooldown": 0,
+        "cost": { "hp": 1 },
+        "effect": "Strikes first in a boarding fight",
+        "unlocked": true,
+        "tags": ["combat"],
+        "icon": "swords"
+      }
+    ],
+    "world_context": "Tidefall Spire rises from a reef no chart names twice. A drowned wizard's vaults flood with every tide, wreckers light false beacons on the cliffs, and a bell below the waves has rung twice this season. It rings once before every wreck.",
+    "starting_location": "Shingle Camp",
+    "time_of_day": "Day",
+    "gm_tone": "Salt, storm, and old magic",
+    "narrator_style": "Brisk nautical prose in the present tense",
+    "difficulty": "normal",
+    "optional_verbs": ["gold", "status", "skill", "rel", "npc", "npcdel", "move", "weather", "var"],
+    "npc_cap": 5,
+    "max_actor_depth": 3,
+    "lock_bg": false,
+    "conversation_method": "Local LLM",
+    "persona": "default",
+    "solo_mode": true,
+    "location_map": [
+      {
+        "name": "Shingle Camp",
+        "keys": ["shingle", "camp", "tents"],
+        "bg": "assets/backgrounds/rainy_night_street.png",
+        "tier": 1,
+        "alertLevel": "normal",
+        "controllingFaction": "fac_crew",
+        "description": "Tents and a beached boat under the spire's shadow."
+      },
+      {
+        "name": "Flooded Vaults",
+        "keys": ["vaults", "flooded", "archive"],
+        "bg": "assets/backgrounds/dungeon.png",
+        "tier": 2,
+        "alertLevel": "heightened",
+        "controllingFaction": "fac_tidewardens",
+        "description": "Drowned halls of the wizard's archive, passable only at low water."
+      },
+      {
+        "name": "The Spire Crown",
+        "keys": ["crown", "spire", "belfry"],
+        "bg": "assets/backgrounds/palace_hall.png",
+        "tier": 3,
+        "alertLevel": "heightened",
+        "controllingFaction": "fac_tidewardens",
+        "description": "The wind-torn crown of the spire and its silent belfry."
+      },
+      {
+        "name": "Wreckers' Signal Cave",
+        "keys": ["signal", "wreckers", "beacon"],
+        "bg": "assets/backgrounds/tavern_room.png",
+        "tier": 2,
+        "alertLevel": "hostile",
+        "controllingFaction": "fac_wreckers",
+        "description": "A lamp-lit cave of false beacons and cut rigging."
+      }
+    ],
+    "start_state": {
+      "hp": 22,
+      "maxHp": 22,
+      "gold": 50,
+      "skills": { "Athletics": 3, "Perception": 2, "Seamanship": 2 },
+      "inventory": [
+        {
+          "id": "inv_bell",
+          "name": "Brass Diving Bell",
+          "quantity": 1,
+          "category": "tool",
+          "description": "Lets one soul walk the flooded vaults."
+        },
+        {
+          "id": "inv_cutlass",
+          "name": "Cutlass",
+          "quantity": 1,
+          "category": "weapon",
+          "slot": "main_hand",
+          "equipped": true,
+          "damage": "1d6+2",
+          "description": "Pitted by salt, honest in the hand."
+        },
+        {
+          "id": "inv_oilskin",
+          "name": "Oilskin Coat",
+          "quantity": 1,
+          "category": "armor",
+          "slot": "armor",
+          "equipped": true,
+          "soak": 1,
+          "description": "Turns spray, spray-turned-knives less so."
+        },
+        {
+          "id": "inv_rum",
+          "name": "Rum Flask",
+          "quantity": 2,
+          "category": "consumable",
+          "description": "Courage by the mouthful.",
+          "useEffect": "heal 5",
+          "tags": ["drink"]
+        },
+        {
+          "id": "inv_chart_case",
+          "name": "Empty Chart Case",
+          "quantity": 1,
+          "category": "treasure",
+          "description": "Waits for the tide chart."
+        }
+      ],
+      "facts": [
+        { "key": "bell_rang_twice", "value": "The drowned bell has rung twice this season" },
+        { "key": "vaults_flood", "value": "The vaults are passable only at low water" }
+      ],
+      "location": "Shingle Camp",
+      "timeOfDay": "Day",
+      "weather": "Driving spray"
+    },
+    "beats": [
+      {
+        "id": "beat_1",
+        "text": "Make camp and take the measure of crew and coast",
+        "kind": "discovery",
+        "status": "active",
+        "condition": "when turn above 0"
+      },
+      {
+        "id": "beat_2",
+        "text": "Dive the flooded archive for the tide chart",
+        "kind": "discovery",
+        "status": "active",
+        "condition": "when quest \"The Tide Chart\" active"
+      },
+      {
+        "id": "beat_3",
+        "text": "Face whatever rings the bell",
+        "kind": "climax",
+        "status": "active",
+        "condition": "when quest \"Silence the Bell\" active"
+      },
+      {
+        "id": "beat_4",
+        "text": "Leave the rock with chart, crew, or neither",
+        "kind": "quiet",
+        "status": "active",
+        "condition": "when quest \"The Tide Chart\" done"
+      }
+    ],
+    "opening_narration": "Spray lashes Shingle Camp. Above, Tidefall Spire stabs the low sky; below, the tide sucks at the vault stairs. From somewhere under the water comes a note so low you feel it in your teeth — the bell, again.",
+    "first_message": "Vane: \"Tide's out for six hours. After that the vaults belong to the sea — and so does anyone still down there.\""
+  },
+  "session": null
+}

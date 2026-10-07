@@ -1,0 +1,268 @@
+{
+  "format": "soul-stage-package",
+  "version": 1,
+  "exported_at": "2026-10-07T00:00:00.000Z",
+  "scene": {
+    "id": "scene_feast_of_ash",
+    "schema_version": 3,
+    "title": "Feast of Ash",
+    "description": "A cursed court ruled by the Ashen King: poison in the cups, whispers behind tapestries, and a prisoner who knows the truth about the fire that claimed the capital.",
+    "starting_bg": "assets/backgrounds/palace_hall.png",
+    "party": [],
+    "gm_directive": "You are the Game Master of a grim courtly fantasy. Emphasize intrigue, poison, and etiquette: every word at the table may be a trap, every courtesy a test.",
+    "clocks": [
+      {
+        "id": "clock_poison",
+        "name": "Poison in the Cups",
+        "segments": 6,
+        "filled": 0,
+        "description": "The poisoner is closing in on the hero's cup",
+        "finisher": "The hero drinks from the poisoned cup! An immediate resilience check, or grave poisoning.",
+        "is_active": true
+      },
+      {
+        "id": "clock_court",
+        "name": "The Court's Patience",
+        "segments": 4,
+        "filled": 0,
+        "description": "The courtiers are losing patience with the stranger",
+        "finisher": "The court openly declares the hero persona non grata: the guard escorts them out of the halls.",
+        "is_active": true
+      }
+    ],
+    "quests": [
+      {
+        "id": "quest_poisoner",
+        "title": "Unmask the Poisoner",
+        "description": "Discover who is lacing the cups with ash poison and present proof to the chancellor.",
+        "status": "active",
+        "requiresItem": "Silver Cup",
+        "objectives": [
+          { "text": "Question the cupbearer", "completed": false },
+          { "text": "Test the cups with silver", "completed": false },
+          { "text": "Name the poisoner before the court", "completed": false }
+        ]
+      },
+      {
+        "id": "quest_prisoner",
+        "title": "Free the Prisoner",
+        "description": "Break the chronicler out of the vaults — they witnessed the night the capital burned.",
+        "status": "active"
+      }
+    ],
+    "npcs": [
+      {
+        "id": "npc_chancellor",
+        "name": "Chancellor Morwen",
+        "archetype": "Court schemer",
+        "personality": "Polite, cold, never answers directly",
+        "position": "By the throne, beside the Ashen King",
+        "active": true,
+        "notes": ["Knows more about the poison than they admit"]
+      },
+      {
+        "id": "npc_jester",
+        "name": "Krix the Fool",
+        "archetype": "Jester-poisoner",
+        "personality": "Chatty, nimble, hides a sharp mind behind grimaces",
+        "position": "Weaving between tables with a tray",
+        "active": true,
+        "notes": ["Their bells jingle for no reason"]
+      },
+      {
+        "id": "npc_chronicler",
+        "name": "Odd the Chronicler",
+        "archetype": "Prisoner",
+        "personality": "Broken but stubborn keeper of the truth",
+        "position": "The vaults beneath the hall",
+        "active": true,
+        "notes": ["Saw who set the capital ablaze"]
+      }
+    ],
+    "dice_rolls_enabled": true,
+    "created_at": "2026-10-07T00:00:00.000Z",
+    "genre": "dark_fantasy",
+    "ruleset": "d20",
+    "resource_definitions": [
+      { "id": "hp", "name": "Health", "value": 24, "min": 0, "max": 24, "unit": "HP", "icon": "heart", "color": "emerald" },
+      { "id": "gold", "name": "Gold", "value": 60, "min": 0, "max": 999, "unit": "◈", "icon": "gold", "color": "amber" },
+      { "id": "favor", "name": "Court Favor", "value": 2, "min": 0, "max": 6, "unit": "lvl", "icon": "crown", "color": "violet" }
+    ],
+    "enabled_modules": { "clocks": true, "quests": true, "inventory": true, "dice": true, "resources": true, "factions": true, "abilities": true },
+    "factions": [
+      {
+        "id": "fac_house_ash",
+        "name": "House Ash",
+        "description": "The ruling dynasty of the ashen throne",
+        "reputation": 30,
+        "standing": "friendly",
+        "icon": "👑",
+        "color": "#f59e0b",
+        "leader": "The Ashen King",
+        "headquarters": "The Throne Hall",
+        "relations": { "fac_veil_circle": "war" },
+        "perks": ["An audience with the throne"],
+        "penalties": ["Exile from the court"]
+      },
+      {
+        "id": "fac_veil_circle",
+        "name": "The Veil Circle",
+        "description": "A secret society of poisoners and whisperers",
+        "reputation": -30,
+        "standing": "unfriendly",
+        "icon": "🕯️",
+        "color": "#8b5cf6",
+        "leader": "Unknown",
+        "headquarters": "The Vaults",
+        "relations": { "fac_house_ash": "war" },
+        "perks": ["Poisons and antidotes"],
+        "penalties": ["Hunted by the guard"]
+      }
+    ],
+    "abilities": [
+      {
+        "id": "abil_silver_tongue",
+        "name": "Silver Tongue",
+        "description": "One well-placed word turns the courtiers to your side.",
+        "category": "social",
+        "cooldownTurns": 3,
+        "currentCooldown": 0,
+        "effect": "+2 to the next social check",
+        "unlocked": true,
+        "tags": ["social"],
+        "icon": "sparkles"
+      },
+      {
+        "id": "abil_poison_sense",
+        "name": "Poisonsense",
+        "description": "A nose trained by years of distrust toward cups.",
+        "category": "survival",
+        "cooldownTurns": 2,
+        "currentCooldown": 0,
+        "effect": "Senses poison in nearby food and drink",
+        "unlocked": true,
+        "tags": ["survival"],
+        "icon": "flask"
+      }
+    ],
+    "world_context": "The capital burned ten years ago, and the Ashen King rules from his blackened halls. The court is split: House Ash holds the throne while the Veil Circle poisons cups and whispers behind tapestries.",
+    "starting_location": "The Ashen Throne Hall",
+    "time_of_day": "Evening",
+    "gm_tone": "Grim courtly fantasy",
+    "narrator_style": "Weighty ceremonial prose in the present tense",
+    "difficulty": "normal",
+    "optional_verbs": ["gold", "status", "skill", "rel", "npc", "npcdel", "move", "weather", "var"],
+    "npc_cap": 4,
+    "max_actor_depth": 3,
+    "lock_bg": false,
+    "conversation_method": "Local LLM",
+    "persona": "default",
+    "solo_mode": true,
+    "location_map": [
+      {
+        "name": "The Ashen Throne Hall",
+        "keys": ["throne", "throne hall", "ashen throne"],
+        "bg": "assets/backgrounds/palace_hall.png",
+        "tier": 1,
+        "alertLevel": "normal",
+        "controllingFaction": "fac_house_ash",
+        "description": "A blackened hall with an ashen throne and a long feasting table."
+      },
+      {
+        "name": "The Vaults Beneath",
+        "keys": ["vaults", "dungeon", "shackles"],
+        "bg": "assets/backgrounds/dungeon.png",
+        "tier": 2,
+        "alertLevel": "heightened",
+        "controllingFaction": "fac_veil_circle",
+        "description": "Dank cells below the hall where Chronicler Odd is held."
+      },
+      {
+        "name": "The Wine Cellar",
+        "keys": ["cellar", "barrels", "wine"],
+        "bg": "assets/backgrounds/tavern_room.png",
+        "tier": 2,
+        "alertLevel": "normal",
+        "controllingFaction": "fac_house_ash",
+        "description": "Casks and bottles; here the cupbearer fills the cups for the feast."
+      }
+    ],
+    "start_state": {
+      "hp": 24,
+      "maxHp": 24,
+      "gold": 60,
+      "skills": { "Etiquette": 3, "Perception": 2, "Stealth": 1 },
+      "inventory": [
+        {
+          "id": "inv_silver_cup",
+          "name": "Silver Cup",
+          "quantity": 1,
+          "category": "tool",
+          "description": "Tarnishes on contact with ash poison."
+        },
+        {
+          "id": "inv_antidote",
+          "name": "Antidote",
+          "quantity": 1,
+          "category": "consumable",
+          "description": "A bitter tincture of the Veil Circle.",
+          "useEffect": "heal 8",
+          "tags": ["healing"]
+        },
+        {
+          "id": "inv_dagger",
+          "name": "Stiletto",
+          "quantity": 1,
+          "category": "weapon",
+          "slot": "main_hand",
+          "equipped": true,
+          "damage": "1d4+2",
+          "description": "A slender blade for close work."
+        },
+        {
+          "id": "inv_cloak",
+          "name": "Ashen Cloak",
+          "quantity": 1,
+          "category": "armor",
+          "slot": "armor",
+          "equipped": true,
+          "soak": 1,
+          "description": "Heavy cloth that turns glancing blows."
+        }
+      ],
+      "facts": [
+        { "key": "capital_burned", "value": "The capital burned ten years ago under unclear circumstances" },
+        { "key": "poison_in_cups", "value": "Someone is lacing the feast cups with ash poison" }
+      ],
+      "location": "The Ashen Throne Hall",
+      "timeOfDay": "Evening",
+      "weather": "Ash outside the windows"
+    },
+    "beats": [
+      {
+        "id": "beat_1",
+        "text": "Survey the feast and learn who serves whom",
+        "kind": "discovery",
+        "status": "active",
+        "condition": "when turn above 0"
+      },
+      {
+        "id": "beat_2",
+        "text": "Find evidence against the poisoner",
+        "kind": "discovery",
+        "status": "active",
+        "condition": "when quest \"Unmask the Poisoner\" active"
+      },
+      {
+        "id": "beat_3",
+        "text": "A public accusation and the feast's denouement",
+        "kind": "climax",
+        "status": "active",
+        "condition": "when quest \"Unmask the Poisoner\" done"
+      }
+    ],
+    "opening_narration": "Candelabra smoke over the long table. The Ashen King does not touch his cup, Chancellor Morwen smiles a fraction too evenly, and Krix the Fool has twice now drifted past your seat.",
+    "first_message": "Morwen: \"A guest out of ash and road. Sit closer to the fire — tonight, at this table, we decide who lives.\""
+  },
+  "session": null
+}

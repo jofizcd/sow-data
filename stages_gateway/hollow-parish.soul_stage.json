@@ -1,0 +1,338 @@
+{
+  "format": "soul-stage-package",
+  "version": 1,
+  "exported_at": "2026-10-07T00:00:00.000Z",
+  "scene": {
+    "id": "scene_hollow_parish",
+    "schema_version": 3,
+    "title": "The Hollow Parish",
+    "description": "A drowned village that should not be on any map: an empty church that rings, pilgrims who never left, and a warden counting souls.",
+    "starting_bg": "assets/backgrounds/rainy_night_street.png",
+    "party": [],
+    "gm_directive": "You are the Game Master of a slow folk horror. Emphasize wrongness in small doses: too-quiet animals, too-polite villagers, water where it should not be. Never explain the horror outright.",
+    "clocks": [
+      {
+        "id": "clock_water",
+        "name": "The Rising Water",
+        "segments": 6,
+        "filled": 1,
+        "description": "Black water climbs the church steps",
+        "finisher": "The parish drowns: only rooftops and the belfry remain above black water.",
+        "is_active": true
+      },
+      {
+        "id": "clock_bells",
+        "name": "The Empty Belfry",
+        "segments": 4,
+        "filled": 0,
+        "description": "The bell rings with no one in the tower",
+        "finisher": "The thirteenth ringing: every door in the village opens at once.",
+        "is_active": true
+      },
+      {
+        "id": "clock_warden",
+        "name": "The Warden's Count",
+        "segments": 4,
+        "filled": 0,
+        "description": "The warden is counting the living",
+        "finisher": "The count is complete: the parish claims one more soul — the hero, unless the count is broken.",
+        "is_active": true
+      }
+    ],
+    "quests": [
+      {
+        "id": "quest_bells",
+        "title": "Who Rings the Bell",
+        "description": "Climb the belfry and learn what rings the bell — then stop it.",
+        "status": "active",
+        "requiresItem": "Belfry Key",
+        "objectives": [
+          { "text": "Earn the warden's trust — or pick the lock", "completed": false },
+          { "text": "Climb the drowned stair", "completed": false },
+          { "text": "Face the ringer", "completed": false }
+        ]
+      },
+      {
+        "id": "quest_pilgrims",
+        "title": "The Pilgrims Who Stayed",
+        "description": "Discover why the pilgrims never left the parish.",
+        "status": "active"
+      },
+      {
+        "id": "quest_road",
+        "title": "A Road Out",
+        "description": "Find the old pilgrim road before the water closes it.",
+        "status": "active"
+      }
+    ],
+    "npcs": [
+      {
+        "id": "npc_warden",
+        "name": "Warden Hobb",
+        "archetype": "Village warden",
+        "personality": "Hospitable the way a trap is hospitable",
+        "position": "On the church porch, counting on their fingers",
+        "active": true,
+        "notes": ["Counts every living soul aloud"]
+      },
+      {
+        "id": "npc_widow",
+        "name": "Widow Lark",
+        "archetype": "Innkeeper",
+        "personality": "Kind-eyed, evasive, mends the same net nightly",
+        "position": "Behind the inn counter",
+        "active": true,
+        "notes": ["Her husband 'left' three floods ago"]
+      },
+      {
+        "id": "npc_boy",
+        "name": "Tam",
+        "archetype": "Choir boy",
+        "personality": "Too calm, too polite, hums drowned hymns",
+        "position": "On the church steps, barefoot",
+        "active": true,
+        "notes": ["Knows the bell schedule by heart"]
+      },
+      {
+        "id": "npc_pilgrim",
+        "name": "Pilgrim Sorrow",
+        "archetype": "Wandering penitent",
+        "personality": "Exhausted, lucid in flashes, begs to be believed",
+        "position": "Collapsed in the inn stable",
+        "active": true,
+        "notes": ["Arrived a week ago; has not slept since"]
+      }
+    ],
+    "dice_rolls_enabled": true,
+    "created_at": "2026-10-07T00:00:00.000Z",
+    "genre": "horror",
+    "ruleset": "d20",
+    "resource_definitions": [
+      { "id": "hp", "name": "Health", "value": 18, "min": 0, "max": 18, "unit": "HP", "icon": "heart", "color": "emerald" },
+      { "id": "gold", "name": "Coin", "value": 30, "min": 0, "max": 999, "unit": "◈", "icon": "gold", "color": "amber" },
+      { "id": "nerve", "name": "Nerve", "value": 3, "min": 0, "max": 5, "unit": "pts", "icon": "eye", "color": "violet" }
+    ],
+    "enabled_modules": { "clocks": true, "quests": true, "inventory": true, "dice": true, "resources": true, "factions": true, "abilities": true },
+    "factions": [
+      {
+        "id": "fac_parish",
+        "name": "The Parish",
+        "description": "Villagers who smile a fraction too long",
+        "reputation": 10,
+        "standing": "neutral",
+        "icon": "⛪",
+        "color": "#94a3b8",
+        "leader": "Warden Hobb",
+        "headquarters": "The drowned church",
+        "relations": { "fac_outsiders": "rivalry" },
+        "perks": ["Shelter and hot food"],
+        "penalties": ["Counted among the parish"]
+      },
+      {
+        "id": "fac_outsiders",
+        "name": "The Road Folk",
+        "description": "Drifters and pilgrims passing through",
+        "reputation": 5,
+        "standing": "neutral",
+        "icon": "🎒",
+        "color": "#38bdf8",
+        "leader": "No one",
+        "headquarters": "The pilgrim road",
+        "relations": { "fac_parish": "rivalry" },
+        "perks": ["News of the outside"],
+        "penalties": ["No roots, no refuge"]
+      },
+      {
+        "id": "fac_drowned",
+        "name": "The Drowned",
+        "description": "Whatever rings the bell",
+        "reputation": -60,
+        "standing": "hostile",
+        "icon": "🌊",
+        "color": "#1e3a8a",
+        "leader": "Unknown",
+        "headquarters": "Below the black water",
+        "relations": {},
+        "perks": ["None the living want"],
+        "penalties": ["The thirteenth ringing"]
+      }
+    ],
+    "abilities": [
+      {
+        "id": "abil_lantern_oil",
+        "name": "Blessed Oil",
+        "description": "Consecrated lantern oil burns true things brighter.",
+        "category": "perk",
+        "cooldownTurns": 3,
+        "currentCooldown": 0,
+        "effect": "Reveals what hides in a room",
+        "unlocked": true,
+        "tags": ["perk"],
+        "icon": "flame"
+      },
+      {
+        "id": "abil_hold_breath",
+        "name": "Held Breath",
+        "description": "Go still, go silent, go unnoticed.",
+        "category": "stealth",
+        "cooldownTurns": 2,
+        "currentCooldown": 0,
+        "effect": "Slips past one watchful presence",
+        "unlocked": true,
+        "tags": ["stealth"],
+        "icon": "eye"
+      },
+      {
+        "id": "abil_last_rite",
+        "name": "Last Rite",
+        "description": "Words that lay things to rest — if said in time.",
+        "category": "magic",
+        "cooldownTurns": 4,
+        "currentCooldown": 0,
+        "cost": { "hp": 2 },
+        "effect": "Quiets one restless presence",
+        "unlocked": true,
+        "tags": ["magic"],
+        "icon": "book"
+      }
+    ],
+    "world_context": "The parish is not on any reliable map: roads bend around it, letters from it arrive damp. The church stands empty yet the bell rings; the pilgrims came for one night years ago and never left; Warden Hobb counts souls the way others count sheep.",
+    "starting_location": "Mud Lane",
+    "time_of_day": "Evening",
+    "gm_tone": "Slow folk horror",
+    "narrator_style": "Quiet dreadful prose in the present tense",
+    "difficulty": "hard",
+    "optional_verbs": ["gold", "status", "skill", "rel", "npc", "npcdel", "move", "weather", "var"],
+    "npc_cap": 5,
+    "max_actor_depth": 3,
+    "lock_bg": false,
+    "conversation_method": "Local LLM",
+    "persona": "default",
+    "solo_mode": true,
+    "location_map": [
+      {
+        "name": "Mud Lane",
+        "keys": ["lane", "mud", "village"],
+        "bg": "assets/backgrounds/rainy_night_street.png",
+        "tier": 1,
+        "alertLevel": "normal",
+        "controllingFaction": "fac_parish",
+        "description": "A drowned lane of sagging houses and too-polite windows."
+      },
+      {
+        "name": "The Drowned Church",
+        "keys": ["church", "belfry", "chapel"],
+        "bg": "assets/backgrounds/dungeon.png",
+        "tier": 2,
+        "alertLevel": "heightened",
+        "controllingFaction": "fac_drowned",
+        "description": "An empty nave ankle-deep in black water; the stair to the belfry."
+      },
+      {
+        "name": "The Pilgrim Inn",
+        "keys": ["inn", "hearth", "tavern"],
+        "bg": "assets/backgrounds/tavern_hall.png",
+        "tier": 2,
+        "alertLevel": "normal",
+        "controllingFaction": "fac_parish",
+        "description": "Warmth, stew, and Widow Lark's unblinking kindness."
+      },
+      {
+        "name": "The Cellar Chapel",
+        "keys": ["cellar", "crypt", "candles"],
+        "bg": "assets/backgrounds/tavern_room.png",
+        "tier": 3,
+        "alertLevel": "heightened",
+        "controllingFaction": "fac_drowned",
+        "description": "A candle-crowded cellar where the parish keeps its drowned."
+      }
+    ],
+    "start_state": {
+      "hp": 18,
+      "maxHp": 18,
+      "gold": 30,
+      "skills": { "Perception": 3, "Resolve": 2, "Stealth": 2 },
+      "inventory": [
+        {
+          "id": "inv_lantern",
+          "name": "Storm Lantern",
+          "quantity": 1,
+          "category": "tool",
+          "charges": 4,
+          "rechargeTurns": 5,
+          "description": "Burns steady in wrong air.",
+          "tags": ["light"]
+        },
+        {
+          "id": "inv_tea",
+          "name": "Bitter Tea",
+          "quantity": 2,
+          "category": "consumable",
+          "description": "Steadies hands and nerves.",
+          "useEffect": "heal 5",
+          "tags": ["drink"]
+        },
+        {
+          "id": "inv_cudgel",
+          "name": "Walking Cudgel",
+          "quantity": 1,
+          "category": "weapon",
+          "slot": "main_hand",
+          "equipped": true,
+          "damage": "1d6",
+          "description": "Oak, worn smooth by worry."
+        },
+        {
+          "id": "inv_coat",
+          "name": "Waxed Coat",
+          "quantity": 1,
+          "category": "armor",
+          "slot": "armor",
+          "equipped": true,
+          "soak": 1,
+          "description": "Sheds rain and worse."
+        }
+      ],
+      "facts": [
+        { "key": "bell_rings_empty", "value": "The church bell rings though the church stands empty" },
+        { "key": "pilgrims_stayed", "value": "The pilgrims came for one night and never left" }
+      ],
+      "location": "Mud Lane",
+      "timeOfDay": "Evening",
+      "weather": "Cold drizzle"
+    },
+    "beats": [
+      {
+        "id": "beat_1",
+        "text": "Take lodging and feel out what is wrong here",
+        "kind": "discovery",
+        "status": "active",
+        "condition": "when turn above 0"
+      },
+      {
+        "id": "beat_2",
+        "text": "Learn why the pilgrims stayed",
+        "kind": "revelation",
+        "status": "active",
+        "condition": "when quest \"The Pilgrims Who Stayed\" active"
+      },
+      {
+        "id": "beat_3",
+        "text": "Climb to the ringer before the thirteenth ringing",
+        "kind": "climax",
+        "status": "active",
+        "condition": "when quest \"Who Rings the Bell\" active"
+      },
+      {
+        "id": "beat_4",
+        "text": "Leave by the pilgrim road — or join the count",
+        "kind": "quiet",
+        "status": "active",
+        "condition": "when quest \"A Road Out\" done"
+      }
+    ],
+    "opening_narration": "Drizzle threads Mud Lane. Every window holds a face, every face smiles a heartbeat too long, and from the drowned church comes the bell — rung by no hands you can see.",
+    "first_message": "Hobb: \"A guest! The parish loves guests. Supper's hot, the beds are dry — and do count the bells with us tonight.\""
+  },
+  "session": null
+}
