@@ -47,9 +47,18 @@
         "status": "active",
         "requiresItem": "Belfry Key",
         "objectives": [
-          { "text": "Earn the warden's trust — or pick the lock", "completed": false },
-          { "text": "Climb the drowned stair", "completed": false },
-          { "text": "Face the ringer", "completed": false }
+          {
+            "text": "Earn the warden's trust — or pick the lock",
+            "completed": false
+          },
+          {
+            "text": "Climb the drowned stair",
+            "completed": false
+          },
+          {
+            "text": "Face the ringer",
+            "completed": false
+          }
         ]
       },
       {
@@ -73,7 +82,9 @@
         "personality": "Hospitable the way a trap is hospitable",
         "position": "On the church porch, counting on their fingers",
         "active": true,
-        "notes": ["Counts every living soul aloud"]
+        "notes": [
+          "Counts every living soul aloud"
+        ]
       },
       {
         "id": "npc_widow",
@@ -82,7 +93,9 @@
         "personality": "Kind-eyed, evasive, mends the same net nightly",
         "position": "Behind the inn counter",
         "active": true,
-        "notes": ["Her husband 'left' three floods ago"]
+        "notes": [
+          "Her husband 'left' three floods ago"
+        ]
       },
       {
         "id": "npc_boy",
@@ -91,7 +104,9 @@
         "personality": "Too calm, too polite, hums drowned hymns",
         "position": "On the church steps, barefoot",
         "active": true,
-        "notes": ["Knows the bell schedule by heart"]
+        "notes": [
+          "Knows the bell schedule by heart"
+        ]
       },
       {
         "id": "npc_pilgrim",
@@ -100,7 +115,9 @@
         "personality": "Exhausted, lucid in flashes, begs to be believed",
         "position": "Collapsed in the inn stable",
         "active": true,
-        "notes": ["Arrived a week ago; has not slept since"]
+        "notes": [
+          "Arrived a week ago; has not slept since"
+        ]
       }
     ],
     "dice_rolls_enabled": true,
@@ -108,11 +125,46 @@
     "genre": "horror",
     "ruleset": "d20",
     "resource_definitions": [
-      { "id": "hp", "name": "Health", "value": 18, "min": 0, "max": 18, "unit": "HP", "icon": "heart", "color": "emerald" },
-      { "id": "gold", "name": "Coin", "value": 30, "min": 0, "max": 999, "unit": "◈", "icon": "gold", "color": "amber" },
-      { "id": "nerve", "name": "Nerve", "value": 3, "min": 0, "max": 5, "unit": "pts", "icon": "eye", "color": "violet" }
+      {
+        "id": "hp",
+        "name": "Health",
+        "value": 18,
+        "min": 0,
+        "max": 18,
+        "unit": "HP",
+        "icon": "heart",
+        "color": "emerald"
+      },
+      {
+        "id": "gold",
+        "name": "Coin",
+        "value": 30,
+        "min": 0,
+        "max": 999,
+        "unit": "◈",
+        "icon": "gold",
+        "color": "amber"
+      },
+      {
+        "id": "nerve",
+        "name": "Nerve",
+        "value": 3,
+        "min": 0,
+        "max": 5,
+        "unit": "pts",
+        "icon": "eye",
+        "color": "violet"
+      }
     ],
-    "enabled_modules": { "clocks": true, "quests": true, "inventory": true, "dice": true, "resources": true, "factions": true, "abilities": true },
+    "enabled_modules": {
+      "clocks": true,
+      "quests": true,
+      "inventory": true,
+      "dice": true,
+      "resources": true,
+      "factions": true,
+      "abilities": true
+    },
     "factions": [
       {
         "id": "fac_parish",
@@ -124,9 +176,16 @@
         "color": "#94a3b8",
         "leader": "Warden Hobb",
         "headquarters": "The drowned church",
-        "relations": { "fac_outsiders": "rivalry" },
-        "perks": ["Shelter and hot food"],
-        "penalties": ["Counted among the parish"]
+        "relations": {
+          "fac_outsiders": "rivalry"
+        },
+        "perks": [
+          "Shelter and hot food"
+        ],
+        "penalties": [
+          "Counted among the parish"
+        ],
+        "ideology": "Devout appeasement of the sea and strict adherence to the drowned registry."
       },
       {
         "id": "fac_outsiders",
@@ -138,9 +197,16 @@
         "color": "#38bdf8",
         "leader": "No one",
         "headquarters": "The pilgrim road",
-        "relations": { "fac_parish": "rivalry" },
-        "perks": ["News of the outside"],
-        "penalties": ["No roots, no refuge"]
+        "relations": {
+          "fac_parish": "rivalry"
+        },
+        "perks": [
+          "News of the outside"
+        ],
+        "penalties": [
+          "No roots, no refuge"
+        ],
+        "ideology": "Transient survival, scavenging forgotten goods, and staying mobile on the road."
       },
       {
         "id": "fac_drowned",
@@ -153,8 +219,13 @@
         "leader": "Unknown",
         "headquarters": "Below the black water",
         "relations": {},
-        "perks": ["None the living want"],
-        "penalties": ["The thirteenth ringing"]
+        "perks": [
+          "None the living want"
+        ],
+        "penalties": [
+          "The thirteenth ringing"
+        ],
+        "ideology": "Inescapable reclamation of the land by the cold abyss."
       }
     ],
     "abilities": [
@@ -167,7 +238,9 @@
         "currentCooldown": 0,
         "effect": "Reveals what hides in a room",
         "unlocked": true,
-        "tags": ["perk"],
+        "tags": [
+          "perk"
+        ],
         "icon": "flame"
       },
       {
@@ -179,7 +252,9 @@
         "currentCooldown": 0,
         "effect": "Slips past one watchful presence",
         "unlocked": true,
-        "tags": ["stealth"],
+        "tags": [
+          "stealth"
+        ],
         "icon": "eye"
       },
       {
@@ -189,10 +264,14 @@
         "category": "magic",
         "cooldownTurns": 4,
         "currentCooldown": 0,
-        "cost": { "hp": 2 },
+        "cost": {
+          "hp": 2
+        },
         "effect": "Quiets one restless presence",
         "unlocked": true,
-        "tags": ["magic"],
+        "tags": [
+          "magic"
+        ],
         "icon": "book"
       }
     ],
@@ -202,7 +281,17 @@
     "gm_tone": "Slow folk horror",
     "narrator_style": "Quiet dreadful prose in the present tense",
     "difficulty": "hard",
-    "optional_verbs": ["gold", "status", "skill", "rel", "npc", "npcdel", "move", "weather", "var"],
+    "optional_verbs": [
+      "gold",
+      "status",
+      "skill",
+      "rel",
+      "npc",
+      "npcdel",
+      "move",
+      "weather",
+      "var"
+    ],
     "npc_cap": 5,
     "max_actor_depth": 3,
     "lock_bg": false,
@@ -212,46 +301,82 @@
     "location_map": [
       {
         "name": "Mud Lane",
-        "keys": ["lane", "mud", "village"],
+        "keys": [
+          "lane",
+          "mud",
+          "village"
+        ],
         "bg": "assets/backgrounds/rainy_night_street.png",
         "tier": 1,
         "alertLevel": "normal",
         "controllingFaction": "fac_parish",
-        "description": "A drowned lane of sagging houses and too-polite windows."
+        "description": "A drowned lane of sagging houses and too-polite windows.",
+        "connectedZoneIds": [
+          "The Pilgrim Inn",
+          "The Drowned Church"
+        ]
       },
       {
         "name": "The Drowned Church",
-        "keys": ["church", "belfry", "chapel"],
+        "keys": [
+          "church",
+          "belfry",
+          "chapel"
+        ],
         "bg": "assets/backgrounds/dungeon.png",
         "tier": 2,
         "alertLevel": "heightened",
         "controllingFaction": "fac_drowned",
-        "description": "An empty nave ankle-deep in black water; the stair to the belfry."
+        "description": "An empty nave ankle-deep in black water; the stair to the belfry.",
+        "connectedZoneIds": [
+          "Mud Lane",
+          "The Pilgrim Inn",
+          "The Cellar Chapel"
+        ]
       },
       {
         "name": "The Pilgrim Inn",
-        "keys": ["inn", "hearth", "tavern"],
+        "keys": [
+          "inn",
+          "hearth",
+          "tavern"
+        ],
         "bg": "assets/backgrounds/tavern_hall.png",
         "tier": 2,
         "alertLevel": "normal",
         "controllingFaction": "fac_parish",
-        "description": "Warmth, stew, and Widow Lark's unblinking kindness."
+        "description": "Warmth, stew, and Widow Lark's unblinking kindness.",
+        "connectedZoneIds": [
+          "Mud Lane",
+          "The Drowned Church"
+        ]
       },
       {
         "name": "The Cellar Chapel",
-        "keys": ["cellar", "crypt", "candles"],
+        "keys": [
+          "cellar",
+          "crypt",
+          "candles"
+        ],
         "bg": "assets/backgrounds/tavern_room.png",
         "tier": 3,
         "alertLevel": "heightened",
         "controllingFaction": "fac_drowned",
-        "description": "A candle-crowded cellar where the parish keeps its drowned."
+        "description": "A candle-crowded cellar where the parish keeps its drowned.",
+        "connectedZoneIds": [
+          "The Drowned Church"
+        ]
       }
     ],
     "start_state": {
       "hp": 18,
       "maxHp": 18,
       "gold": 30,
-      "skills": { "Perception": 3, "Resolve": 2, "Stealth": 2 },
+      "skills": {
+        "Perception": 3,
+        "Resolve": 2,
+        "Stealth": 2
+      },
       "inventory": [
         {
           "id": "inv_lantern",
@@ -261,7 +386,9 @@
           "charges": 4,
           "rechargeTurns": 5,
           "description": "Burns steady in wrong air.",
-          "tags": ["light"]
+          "tags": [
+            "light"
+          ]
         },
         {
           "id": "inv_tea",
@@ -270,7 +397,9 @@
           "category": "consumable",
           "description": "Steadies hands and nerves.",
           "useEffect": "heal 5",
-          "tags": ["drink"]
+          "tags": [
+            "drink"
+          ]
         },
         {
           "id": "inv_cudgel",
@@ -294,8 +423,14 @@
         }
       ],
       "facts": [
-        { "key": "bell_rings_empty", "value": "The church bell rings though the church stands empty" },
-        { "key": "pilgrims_stayed", "value": "The pilgrims came for one night and never left" }
+        {
+          "key": "bell_rings_empty",
+          "value": "The church bell rings though the church stands empty"
+        },
+        {
+          "key": "pilgrims_stayed",
+          "value": "The pilgrims came for one night and never left"
+        }
       ],
       "location": "Mud Lane",
       "timeOfDay": "Evening",
