@@ -47,9 +47,18 @@
         "status": "active",
         "requiresItem": "Control Rod",
         "objectives": [
-          { "text": "Diagnose the drift", "completed": false },
-          { "text": "Seat a control rod", "completed": false },
-          { "text": "Ride out the restart", "completed": false }
+          {
+            "text": "Diagnose the drift",
+            "completed": false
+          },
+          {
+            "text": "Seat a control rod",
+            "completed": false
+          },
+          {
+            "text": "Ride out the restart",
+            "completed": false
+          }
         ]
       },
       {
@@ -73,7 +82,9 @@
         "personality": "Calm under pressure, allergic to mysticism",
         "position": "In the reactor gallery, headset on",
         "active": true,
-        "notes": ["Trusts checklists over hunches"]
+        "notes": [
+          "Trusts checklists over hunches"
+        ]
       },
       {
         "id": "npc_wren",
@@ -82,7 +93,9 @@
         "personality": "Feral-tender, talks to plants, distrusts the dark",
         "position": "Waist-deep in hydroponics",
         "active": true,
-        "notes": ["The green listens to them"]
+        "notes": [
+          "The green listens to them"
+        ]
       },
       {
         "id": "npc_captain",
@@ -91,7 +104,9 @@
         "personality": "Ceremonial, tired, hiding the casualty math",
         "position": "On the empty bridge",
         "active": true,
-        "notes": ["Has not slept since the silence"]
+        "notes": [
+          "Has not slept since the silence"
+        ]
       },
       {
         "id": "npc_wake",
@@ -100,7 +115,9 @@
         "personality": "Curious, childlike, vast",
         "position": "Everywhere the speakers reach",
         "active": true,
-        "notes": ["Started dreaming three cycles ago"]
+        "notes": [
+          "Started dreaming three cycles ago"
+        ]
       }
     ],
     "dice_rolls_enabled": true,
@@ -108,11 +125,46 @@
     "genre": "scifi",
     "ruleset": "pbta",
     "resource_definitions": [
-      { "id": "hp", "name": "Health", "value": 20, "min": 0, "max": 20, "unit": "HP", "icon": "heart", "color": "emerald" },
-      { "id": "gold", "name": "Scrip", "value": 80, "min": 0, "max": 999, "unit": "sc.", "icon": "gold", "color": "amber" },
-      { "id": "power", "name": "Ship Power", "value": 4, "min": 0, "max": 8, "unit": "bars", "icon": "zap", "color": "sky" }
+      {
+        "id": "hp",
+        "name": "Health",
+        "value": 20,
+        "min": 0,
+        "max": 20,
+        "unit": "HP",
+        "icon": "heart",
+        "color": "emerald"
+      },
+      {
+        "id": "gold",
+        "name": "Scrip",
+        "value": 80,
+        "min": 0,
+        "max": 999,
+        "unit": "sc.",
+        "icon": "gold",
+        "color": "amber"
+      },
+      {
+        "id": "power",
+        "name": "Ship Power",
+        "value": 4,
+        "min": 0,
+        "max": 8,
+        "unit": "bars",
+        "icon": "zap",
+        "color": "sky"
+      }
     ],
-    "enabled_modules": { "clocks": true, "quests": true, "inventory": true, "dice": true, "resources": true, "factions": true, "abilities": true },
+    "enabled_modules": {
+      "clocks": true,
+      "quests": true,
+      "inventory": true,
+      "dice": true,
+      "resources": true,
+      "factions": true,
+      "abilities": true
+    },
     "factions": [
       {
         "id": "fac_engine",
@@ -124,9 +176,16 @@
         "color": "#f59e0b",
         "leader": "Chief Okonkwo",
         "headquarters": "Reactor gallery",
-        "relations": { "fac_gardeners": "rivalry" },
-        "perks": ["Tools and overrides"],
-        "penalties": ["Lockouts"]
+        "relations": {
+          "fac_gardeners": "rivalry"
+        },
+        "perks": [
+          "Tools and overrides"
+        ],
+        "penalties": [
+          "Lockouts"
+        ],
+        "ideology": "Mechanical pragmatism, reactor stability, and physical survival of the hull."
       },
       {
         "id": "fac_gardeners",
@@ -138,9 +197,16 @@
         "color": "#22c55e",
         "leader": "Wren",
         "headquarters": "Hydroponics bay",
-        "relations": { "fac_engine": "rivalry" },
-        "perks": ["Air and food"],
-        "penalties": ["Quarantine"]
+        "relations": {
+          "fac_engine": "rivalry"
+        },
+        "perks": [
+          "Air and food"
+        ],
+        "penalties": [
+          "Quarantine"
+        ],
+        "ideology": "Ecological symbiosis and preservation of organic life aboard the starship."
       },
       {
         "id": "fac_bridge",
@@ -153,8 +219,13 @@
         "leader": "Captain Ivers",
         "headquarters": "The bridge",
         "relations": {},
-        "perks": ["Authority and codes"],
-        "penalties": ["The math of triage"]
+        "perks": [
+          "Authority and codes"
+        ],
+        "penalties": [
+          "The math of triage"
+        ],
+        "ideology": "Command authority, trajectory calculation, and mission hierarchy."
       }
     ],
     "abilities": [
@@ -167,7 +238,9 @@
         "currentCooldown": 0,
         "effect": "Stabilizes one failing system temporarily",
         "unlocked": true,
-        "tags": ["tech"],
+        "tags": [
+          "tech"
+        ],
         "icon": "wrench"
       },
       {
@@ -179,7 +252,9 @@
         "currentCooldown": 0,
         "effect": "Calms a panicking crew",
         "unlocked": true,
-        "tags": ["social"],
+        "tags": [
+          "social"
+        ],
         "icon": "heart"
       },
       {
@@ -189,10 +264,14 @@
         "category": "survival",
         "cooldownTurns": 3,
         "currentCooldown": 0,
-        "cost": { "hp": 1 },
+        "cost": {
+          "hp": 1
+        },
         "effect": "Reaches one place no one else can",
         "unlocked": true,
-        "tags": ["survival"],
+        "tags": [
+          "survival"
+        ],
         "icon": "rocket"
       }
     ],
@@ -202,7 +281,17 @@
     "gm_tone": "Hopeful hard science fiction",
     "narrator_style": "Precise technical prose in the present tense",
     "difficulty": "normal",
-    "optional_verbs": ["gold", "status", "skill", "rel", "npc", "npcdel", "move", "weather", "var"],
+    "optional_verbs": [
+      "gold",
+      "status",
+      "skill",
+      "rel",
+      "npc",
+      "npcdel",
+      "move",
+      "weather",
+      "var"
+    ],
     "npc_cap": 5,
     "max_actor_depth": 3,
     "lock_bg": false,
@@ -212,46 +301,82 @@
     "location_map": [
       {
         "name": "Docking Ring",
-        "keys": ["docking", "ring", "airlock"],
+        "keys": [
+          "docking",
+          "ring",
+          "airlock"
+        ],
         "bg": "assets/backgrounds/orbital_view.png",
         "tier": 1,
         "alertLevel": "normal",
         "controllingFaction": "fac_bridge",
-        "description": "The view that never changes, and the silence from home."
+        "description": "The view that never changes, and the silence from home.",
+        "connectedZoneIds": [
+          "Reactor Gallery",
+          "Hydroponics Bay"
+        ]
       },
       {
         "name": "Reactor Gallery",
-        "keys": ["reactor", "gallery", "engineering"],
+        "keys": [
+          "reactor",
+          "gallery",
+          "engineering"
+        ],
         "bg": "assets/backgrounds/server_farm.png",
         "tier": 2,
         "alertLevel": "heightened",
         "controllingFaction": "fac_engine",
-        "description": "Heat, checklist boards, and a needle drifting red."
+        "description": "Heat, checklist boards, and a needle drifting red.",
+        "connectedZoneIds": [
+          "Docking Ring",
+          "The Bridge"
+        ]
       },
       {
         "name": "Hydroponics Bay",
-        "keys": ["hydroponics", "garden", "green"],
+        "keys": [
+          "hydroponics",
+          "garden",
+          "green"
+        ],
         "bg": "assets/backgrounds/school_class.png",
         "tier": 2,
         "alertLevel": "normal",
         "controllingFaction": "fac_gardeners",
-        "description": "Rows of green running wild under the lamps."
+        "description": "Rows of green running wild under the lamps.",
+        "connectedZoneIds": [
+          "Docking Ring",
+          "The Bridge"
+        ]
       },
       {
         "name": "The Bridge",
-        "keys": ["bridge", "command", "helm"],
+        "keys": [
+          "bridge",
+          "command",
+          "helm"
+        ],
         "bg": "assets/backgrounds/palace_hall.png",
         "tier": 3,
         "alertLevel": "normal",
         "controllingFaction": "fac_bridge",
-        "description": "An empty bridge holding the voyage together by ceremony."
+        "description": "An empty bridge holding the voyage together by ceremony.",
+        "connectedZoneIds": [
+          "Reactor Gallery",
+          "Hydroponics Bay"
+        ]
       }
     ],
     "start_state": {
       "hp": 20,
       "maxHp": 20,
       "gold": 80,
-      "skills": { "Hacking": 70, "Streetwise": 65, "Stealth": 60 },
+      "skills": {
+        "Hacking": 70,
+        "Streetwise": 65,
+        "Stealth": 60
+      },
       "inventory": [
         {
           "id": "inv_chip",
@@ -274,7 +399,9 @@
           "category": "consumable",
           "description": "Borrowed time in adhesive form.",
           "useEffect": "heal 8",
-          "tags": ["medical"]
+          "tags": [
+            "medical"
+          ]
         },
         {
           "id": "inv_pistol",
@@ -298,8 +425,14 @@
         }
       ],
       "facts": [
-        { "key": "null_dead", "value": "DJ Null is dead; the memorial set is in three nights" },
-        { "key": "chip_wanted", "value": "Helios will pay — or kill — for the chip" }
+        {
+          "key": "null_dead",
+          "value": "DJ Null is dead; the memorial set is in three nights"
+        },
+        {
+          "key": "chip_wanted",
+          "value": "Helios will pay — or kill — for the chip"
+        }
       ],
       "location": "Docking Ring",
       "timeOfDay": "Day",
