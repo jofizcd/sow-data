@@ -38,9 +38,18 @@
         "status": "active",
         "requiresItem": "Waybill",
         "objectives": [
-          { "text": "Question the mechanic", "completed": false },
-          { "text": "Find the waybill", "completed": false },
-          { "text": "Stop the liftoff", "completed": false }
+          {
+            "text": "Question the mechanic",
+            "completed": false
+          },
+          {
+            "text": "Find the waybill",
+            "completed": false
+          },
+          {
+            "text": "Stop the liftoff",
+            "completed": false
+          }
         ]
       },
       {
@@ -58,7 +67,9 @@
         "personality": "Weary, honest, cannot stand amateurs",
         "position": "At the mooring, under an umbrella",
         "active": true,
-        "notes": ["Running an investigation of their own"]
+        "notes": [
+          "Running an investigation of their own"
+        ]
       },
       {
         "id": "npc_mechanic",
@@ -67,7 +78,9 @@
         "personality": "Chatty, greedy for gossip and coins",
         "position": "By the Meridian's gondola",
         "active": true,
-        "notes": ["Knows what was loaded at night"]
+        "notes": [
+          "Knows what was loaded at night"
+        ]
       },
       {
         "id": "npc_urchin",
@@ -76,7 +89,9 @@
         "personality": "Quick, frightened, loyal to the kind",
         "position": "Hiding behind the barrels",
         "active": true,
-        "notes": ["Saw the night loading"]
+        "notes": [
+          "Saw the night loading"
+        ]
       }
     ],
     "dice_rolls_enabled": true,
@@ -84,11 +99,46 @@
     "genre": "detective",
     "ruleset": "d100",
     "resource_definitions": [
-      { "id": "hp", "name": "Health", "value": 20, "min": 0, "max": 20, "unit": "HP", "icon": "heart", "color": "emerald" },
-      { "id": "gold", "name": "Shillings", "value": 40, "min": 0, "max": 999, "unit": "sh.", "icon": "gold", "color": "amber" },
-      { "id": "clues", "name": "Clues", "value": 0, "min": 0, "max": 10, "unit": "pcs", "icon": "search", "color": "sky" }
+      {
+        "id": "hp",
+        "name": "Health",
+        "value": 20,
+        "min": 0,
+        "max": 20,
+        "unit": "HP",
+        "icon": "heart",
+        "color": "emerald"
+      },
+      {
+        "id": "gold",
+        "name": "Shillings",
+        "value": 40,
+        "min": 0,
+        "max": 999,
+        "unit": "sh.",
+        "icon": "gold",
+        "color": "amber"
+      },
+      {
+        "id": "clues",
+        "name": "Clues",
+        "value": 0,
+        "min": 0,
+        "max": 10,
+        "unit": "pcs",
+        "icon": "search",
+        "color": "sky"
+      }
     ],
-    "enabled_modules": { "clocks": true, "quests": true, "inventory": true, "dice": true, "resources": true, "factions": true, "abilities": true },
+    "enabled_modules": {
+      "clocks": true,
+      "quests": true,
+      "inventory": true,
+      "dice": true,
+      "resources": true,
+      "factions": true,
+      "abilities": true
+    },
     "factions": [
       {
         "id": "fac_police",
@@ -100,9 +150,16 @@
         "color": "#38bdf8",
         "leader": "Inspector Grave",
         "headquarters": "The mooring station house",
-        "relations": { "fac_smugglers": "war" },
-        "perks": ["Access to reports"],
-        "penalties": ["Arrest"]
+        "relations": {
+          "fac_smugglers": "war"
+        },
+        "perks": [
+          "Access to reports"
+        ],
+        "penalties": [
+          "Arrest"
+        ],
+        "ideology": "Municipal authority, strict customs enforcement, and lawful order on the docks."
       },
       {
         "id": "fac_smugglers",
@@ -114,9 +171,16 @@
         "color": "#8b5cf6",
         "leader": "Captain Vane",
         "headquarters": "The Meridian",
-        "relations": { "fac_police": "war" },
-        "perks": ["Secret routes"],
-        "penalties": ["A knife in the dark"]
+        "relations": {
+          "fac_police": "war"
+        },
+        "perks": [
+          "Secret routes"
+        ],
+        "penalties": [
+          "A knife in the dark"
+        ],
+        "ideology": "Aviation independence, smuggling freedom, and unchartered skies."
       }
     ],
     "abilities": [
@@ -129,7 +193,9 @@
         "currentCooldown": 0,
         "effect": "Connects two known clues into a conclusion",
         "unlocked": true,
-        "tags": ["social"],
+        "tags": [
+          "social"
+        ],
         "icon": "brain"
       },
       {
@@ -141,7 +207,9 @@
         "currentCooldown": 0,
         "effect": "Hides the hero from watchers for a scene",
         "unlocked": true,
-        "tags": ["stealth"],
+        "tags": [
+          "stealth"
+        ],
         "icon": "eye"
       }
     ],
@@ -151,7 +219,17 @@
     "gm_tone": "Noir detective",
     "narrator_style": "Restrained noir prose in the present tense",
     "difficulty": "normal",
-    "optional_verbs": ["gold", "status", "skill", "rel", "npc", "npcdel", "move", "weather", "var"],
+    "optional_verbs": [
+      "gold",
+      "status",
+      "skill",
+      "rel",
+      "npc",
+      "npcdel",
+      "move",
+      "weather",
+      "var"
+    ],
     "npc_cap": 4,
     "max_actor_depth": 3,
     "lock_bg": false,
@@ -161,37 +239,65 @@
     "location_map": [
       {
         "name": "The Airship Mooring",
-        "keys": ["mooring", "airship", "mast"],
+        "keys": [
+          "mooring",
+          "airship",
+          "mast"
+        ],
         "bg": "assets/backgrounds/rainy_night_street.png",
         "tier": 1,
         "alertLevel": "normal",
         "controllingFaction": "fac_police",
-        "description": "Wet slabs, gas lamps, and the Meridian's shadow overhead."
+        "description": "Wet slabs, gas lamps, and the Meridian's shadow overhead.",
+        "connectedZoneIds": [
+          "The Detective's Office",
+          "The Brass Gear Café"
+        ]
       },
       {
         "name": "The Detective's Office",
-        "keys": ["office", "detective", "loupe"],
+        "keys": [
+          "office",
+          "detective",
+          "loupe"
+        ],
         "bg": "assets/backgrounds/tavern_room.png",
         "tier": 2,
         "alertLevel": "normal",
         "controllingFaction": "fac_police",
-        "description": "A cramped room: a city map, a loupe, cold tea, and case files."
+        "description": "A cramped room: a city map, a loupe, cold tea, and case files.",
+        "connectedZoneIds": [
+          "The Airship Mooring",
+          "The Brass Gear Café"
+        ]
       },
       {
         "name": "The Brass Gear Café",
-        "keys": ["café", "gear", "brass"],
+        "keys": [
+          "café",
+          "gear",
+          "brass"
+        ],
         "bg": "assets/backgrounds/tavern_hall.png",
         "tier": 2,
         "alertLevel": "heightened",
         "controllingFaction": "fac_smugglers",
-        "description": "A pilots' dive trading in rumors and silence."
+        "description": "A pilots' dive trading in rumors and silence.",
+        "connectedZoneIds": [
+          "The Airship Mooring",
+          "The Detective's Office"
+        ]
       }
     ],
     "start_state": {
       "hp": 20,
       "maxHp": 20,
       "gold": 40,
-      "skills": { "Deduction": 75, "Stealth": 60, "Eloquence": 55 },
+      "skills": {
+        "Deduction": 75,
+        "Stealth": 60,
+        "Eloquence": 55
+      },
       "inventory": [
         {
           "id": "inv_loupe",
@@ -225,12 +331,20 @@
           "category": "consumable",
           "description": "For nerves and for informants.",
           "useEffect": "heal 4",
-          "tags": ["drink"]
+          "tags": [
+            "drink"
+          ]
         }
       ],
       "facts": [
-        { "key": "meridian_at_midnight", "value": "The airship Meridian lifts off at midnight" },
-        { "key": "hold_sealed", "value": "The Meridian's hold is sealed and its crew silent" }
+        {
+          "key": "meridian_at_midnight",
+          "value": "The airship Meridian lifts off at midnight"
+        },
+        {
+          "key": "hold_sealed",
+          "value": "The Meridian's hold is sealed and its crew silent"
+        }
       ],
       "location": "The Airship Mooring",
       "timeOfDay": "Night",
