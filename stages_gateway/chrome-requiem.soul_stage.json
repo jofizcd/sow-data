@@ -47,9 +47,18 @@
         "status": "active",
         "requiresItem": "Deck Key",
         "objectives": [
-          { "text": "Decrypt the chip", "completed": false },
-          { "text": "Choose a buyer — or none", "completed": false },
-          { "text": "Survive the handoff", "completed": false }
+          {
+            "text": "Decrypt the chip",
+            "completed": false
+          },
+          {
+            "text": "Choose a buyer — or none",
+            "completed": false
+          },
+          {
+            "text": "Survive the handoff",
+            "completed": false
+          }
         ]
       },
       {
@@ -73,7 +82,9 @@
         "personality": "Patient, pleasantly menacing, always counting",
         "position": "Behind the bar of the back-alley clinic",
         "active": true,
-        "notes": ["Owns the hero's debt and patience in that order"]
+        "notes": [
+          "Owns the hero's debt and patience in that order"
+        ]
       },
       {
         "id": "npc_kira",
@@ -82,7 +93,9 @@
         "personality": "Brilliant, grieving, running on fumes",
         "position": "Somewhere in the lower city",
         "active": true,
-        "notes": ["Last person to see Null alive"]
+        "notes": [
+          "Last person to see Null alive"
+        ]
       },
       {
         "id": "npc_sable",
@@ -91,7 +104,9 @@
         "personality": "Courteous, relentless, bills by the hour",
         "position": "Two streets behind, always",
         "active": true,
-        "notes": ["Never bluffs; never hurries"]
+        "notes": [
+          "Never bluffs; never hurries"
+        ]
       },
       {
         "id": "npc_doc",
@@ -100,7 +115,9 @@
         "personality": "Gallous humor over a steady scalpel",
         "position": "The clinic behind the noodle stall",
         "active": true,
-        "notes": ["Installed half the street's chrome"]
+        "notes": [
+          "Installed half the street's chrome"
+        ]
       }
     ],
     "dice_rolls_enabled": true,
@@ -108,11 +125,46 @@
     "genre": "cyberpunk",
     "ruleset": "d100",
     "resource_definitions": [
-      { "id": "hp", "name": "Health", "value": 20, "min": 0, "max": 20, "unit": "HP", "icon": "heart", "color": "emerald" },
-      { "id": "gold", "name": "Credits", "value": 300, "min": 0, "max": 9999, "unit": "cr", "icon": "gold", "color": "amber" },
-      { "id": "heat", "name": "Heat", "value": 1, "min": 0, "max": 6, "unit": "lvl", "icon": "flame", "color": "red" }
+      {
+        "id": "hp",
+        "name": "Health",
+        "value": 20,
+        "min": 0,
+        "max": 20,
+        "unit": "HP",
+        "icon": "heart",
+        "color": "emerald"
+      },
+      {
+        "id": "gold",
+        "name": "Credits",
+        "value": 300,
+        "min": 0,
+        "max": 9999,
+        "unit": "cr",
+        "icon": "gold",
+        "color": "amber"
+      },
+      {
+        "id": "heat",
+        "name": "Heat",
+        "value": 1,
+        "min": 0,
+        "max": 6,
+        "unit": "lvl",
+        "icon": "flame",
+        "color": "red"
+      }
     ],
-    "enabled_modules": { "clocks": true, "quests": true, "inventory": true, "dice": true, "resources": true, "factions": true, "abilities": true },
+    "enabled_modules": {
+      "clocks": true,
+      "quests": true,
+      "inventory": true,
+      "dice": true,
+      "resources": true,
+      "factions": true,
+      "abilities": true
+    },
     "factions": [
       {
         "id": "fac_helios",
@@ -124,9 +176,16 @@
         "color": "#f59e0b",
         "leader": "Director Okafor",
         "headquarters": "Helios Spire",
-        "relations": { "fac_ghosts": "war" },
-        "perks": ["City-wide surveillance"],
-        "penalties": ["Disappearance teams"]
+        "relations": {
+          "fac_ghosts": "war"
+        },
+        "perks": [
+          "City-wide surveillance"
+        ],
+        "penalties": [
+          "Disappearance teams"
+        ],
+        "ideology": "Total corporate monopoly over synthetic memories and digital consciousness."
       },
       {
         "id": "fac_ghosts",
@@ -138,9 +197,16 @@
         "color": "#38bdf8",
         "leader": "Rook",
         "headquarters": "The clinic basement",
-        "relations": { "fac_helios": "war" },
-        "perks": ["Safehouses and silence"],
-        "penalties": ["Debts called in blood"]
+        "relations": {
+          "fac_helios": "war"
+        },
+        "perks": [
+          "Safehouses and silence"
+        ],
+        "penalties": [
+          "Debts called in blood"
+        ],
+        "ideology": "Memory liberation, digital resistance, and defense of personal identity."
       },
       {
         "id": "fac_nullflock",
@@ -153,8 +219,13 @@
         "leader": "No one",
         "headquarters": "The Requiem Club",
         "relations": {},
-        "perks": ["Eyes everywhere"],
-        "penalties": ["Grief makes informants"]
+        "perks": [
+          "Eyes everywhere"
+        ],
+        "penalties": [
+          "Grief makes informants"
+        ],
+        "ideology": "Radical data anarchism and catastrophic system erasure."
       }
     ],
     "abilities": [
@@ -167,7 +238,9 @@
         "currentCooldown": 0,
         "effect": "Untraceable until the next loud action",
         "unlocked": true,
-        "tags": ["stealth"],
+        "tags": [
+          "stealth"
+        ],
         "icon": "eye"
       },
       {
@@ -177,10 +250,14 @@
         "category": "tech",
         "cooldownTurns": 2,
         "currentCooldown": 0,
-        "cost": { "hp": 2 },
+        "cost": {
+          "hp": 2
+        },
         "effect": "Succeeds at one technical action at a cost",
         "unlocked": true,
-        "tags": ["tech"],
+        "tags": [
+          "tech"
+        ],
         "icon": "zap"
       },
       {
@@ -192,7 +269,9 @@
         "currentCooldown": 0,
         "effect": "Turns one negotiation decisively",
         "unlocked": true,
-        "tags": ["social"],
+        "tags": [
+          "social"
+        ],
         "icon": "briefcase"
       }
     ],
@@ -202,7 +281,17 @@
     "gm_tone": "Neon-noir thriller",
     "narrator_style": "Lean electric prose in the present tense",
     "difficulty": "normal",
-    "optional_verbs": ["gold", "status", "skill", "rel", "npc", "npcdel", "move", "weather", "var"],
+    "optional_verbs": [
+      "gold",
+      "status",
+      "skill",
+      "rel",
+      "npc",
+      "npcdel",
+      "move",
+      "weather",
+      "var"
+    ],
     "npc_cap": 5,
     "max_actor_depth": 3,
     "lock_bg": false,
@@ -212,46 +301,82 @@
     "location_map": [
       {
         "name": "Static Alley",
-        "keys": ["static", "alley", "noodles"],
+        "keys": [
+          "static",
+          "alley",
+          "noodles"
+        ],
         "bg": "assets/backgrounds/neon_alley.png",
         "tier": 1,
         "alertLevel": "normal",
         "controllingFaction": "fac_ghosts",
-        "description": "Rain, signage, and the smell of the noodle stall above the clinic."
+        "description": "Rain, signage, and the smell of the noodle stall above the clinic.",
+        "connectedZoneIds": [
+          "The Relay Basement",
+          "The Requiem Club"
+        ]
       },
       {
         "name": "The Relay Basement",
-        "keys": ["relay", "basement", "servers"],
+        "keys": [
+          "relay",
+          "basement",
+          "servers"
+        ],
         "bg": "assets/backgrounds/server_farm.png",
         "tier": 2,
         "alertLevel": "heightened",
         "controllingFaction": "fac_ghosts",
-        "description": "Ghost hardware humming under the clinic floor."
+        "description": "Ghost hardware humming under the clinic floor.",
+        "connectedZoneIds": [
+          "Static Alley",
+          "Doc's Back Room"
+        ]
       },
       {
         "name": "The Requiem Club",
-        "keys": ["requiem", "club", "dancefloor"],
+        "keys": [
+          "requiem",
+          "club",
+          "dancefloor"
+        ],
         "bg": "assets/backgrounds/tavern_hall.png",
         "tier": 2,
         "alertLevel": "heightened",
         "controllingFaction": "fac_nullflock",
-        "description": "Null's club, preparing the memorial set."
+        "description": "Null's club, preparing the memorial set.",
+        "connectedZoneIds": [
+          "Static Alley",
+          "Doc's Back Room"
+        ]
       },
       {
         "name": "Doc's Back Room",
-        "keys": ["clinic", "surgery", "doc"],
+        "keys": [
+          "clinic",
+          "surgery",
+          "doc"
+        ],
         "bg": "assets/backgrounds/tavern_room.png",
         "tier": 2,
         "alertLevel": "normal",
         "controllingFaction": "fac_ghosts",
-        "description": "Chrome, antiseptic, and Rook's ledger."
+        "description": "Chrome, antiseptic, and Rook's ledger.",
+        "connectedZoneIds": [
+          "The Relay Basement",
+          "The Requiem Club"
+        ]
       }
     ],
     "start_state": {
       "hp": 20,
       "maxHp": 20,
       "gold": 300,
-      "skills": { "Hacking": 70, "Streetwise": 65, "Stealth": 60 },
+      "skills": {
+        "Hacking": 70,
+        "Streetwise": 65,
+        "Stealth": 60
+      },
       "inventory": [
         {
           "id": "inv_chip",
@@ -274,7 +399,9 @@
           "category": "consumable",
           "description": "Borrowed time in adhesive form.",
           "useEffect": "heal 8",
-          "tags": ["medical"]
+          "tags": [
+            "medical"
+          ]
         },
         {
           "id": "inv_pistol",
@@ -298,8 +425,14 @@
         }
       ],
       "facts": [
-        { "key": "null_dead", "value": "DJ Null is dead; the memorial set is in three nights" },
-        { "key": "chip_wanted", "value": "Helios will pay — or kill — for the chip" }
+        {
+          "key": "null_dead",
+          "value": "DJ Null is dead; the memorial set is in three nights"
+        },
+        {
+          "key": "chip_wanted",
+          "value": "Helios will pay — or kill — for the chip"
+        }
       ],
       "location": "Static Alley",
       "timeOfDay": "Night",
