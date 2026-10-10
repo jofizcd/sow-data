@@ -47,9 +47,18 @@
         "status": "active",
         "requiresItem": "Brass Diving Bell",
         "objectives": [
-          { "text": "Reach the vault stairs", "completed": false },
-          { "text": "Dive the flooded archive", "completed": false },
-          { "text": "Escape before high water", "completed": false }
+          {
+            "text": "Reach the vault stairs",
+            "completed": false
+          },
+          {
+            "text": "Dive the flooded archive",
+            "completed": false
+          },
+          {
+            "text": "Escape before high water",
+            "completed": false
+          }
         ]
       },
       {
@@ -73,7 +82,9 @@
         "personality": "Iron-willed, superstitious, pays debts in full",
         "position": "On the shingle below the spire, by the boat",
         "active": true,
-        "notes": ["Lost two crews to these waters"]
+        "notes": [
+          "Lost two crews to these waters"
+        ]
       },
       {
         "id": "npc_scholar",
@@ -82,7 +93,9 @@
         "personality": "Half-mad, brilliant, hears the bell even in silence",
         "position": "Camped in the gatehouse arch",
         "active": true,
-        "notes": ["Can read the tide marks"]
+        "notes": [
+          "Can read the tide marks"
+        ]
       },
       {
         "id": "npc_boatswain",
@@ -91,7 +104,9 @@
         "personality": "Loud, aggrieved, counting shares that do not exist",
         "position": "Among the crew tents",
         "active": true,
-        "notes": ["Sharpening more than rigging knives"]
+        "notes": [
+          "Sharpening more than rigging knives"
+        ]
       },
       {
         "id": "npc_diver",
@@ -100,7 +115,9 @@
         "personality": "Calm, fatalistic, at home below the surface",
         "position": "Mending nets by the tide pools",
         "active": true,
-        "notes": ["Owes the captain her life"]
+        "notes": [
+          "Owes the captain her life"
+        ]
       }
     ],
     "dice_rolls_enabled": true,
@@ -108,11 +125,46 @@
     "genre": "fantasy",
     "ruleset": "d20",
     "resource_definitions": [
-      { "id": "hp", "name": "Health", "value": 22, "min": 0, "max": 22, "unit": "HP", "icon": "heart", "color": "emerald" },
-      { "id": "gold", "name": "Gold", "value": 50, "min": 0, "max": 999, "unit": "◈", "icon": "gold", "color": "amber" },
-      { "id": "rum", "name": "Rum Ration", "value": 3, "min": 0, "max": 6, "unit": "fl.", "icon": "flask", "color": "amber" }
+      {
+        "id": "hp",
+        "name": "Health",
+        "value": 22,
+        "min": 0,
+        "max": 22,
+        "unit": "HP",
+        "icon": "heart",
+        "color": "emerald"
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "value": 50,
+        "min": 0,
+        "max": 999,
+        "unit": "◈",
+        "icon": "gold",
+        "color": "amber"
+      },
+      {
+        "id": "rum",
+        "name": "Rum Ration",
+        "value": 3,
+        "min": 0,
+        "max": 6,
+        "unit": "fl.",
+        "icon": "flask",
+        "color": "amber"
+      }
     ],
-    "enabled_modules": { "clocks": true, "quests": true, "inventory": true, "dice": true, "resources": true, "factions": true, "abilities": true },
+    "enabled_modules": {
+      "clocks": true,
+      "quests": true,
+      "inventory": true,
+      "dice": true,
+      "resources": true,
+      "factions": true,
+      "abilities": true
+    },
     "factions": [
       {
         "id": "fac_crew",
@@ -124,9 +176,16 @@
         "color": "#38bdf8",
         "leader": "Captain Ilsa Vane",
         "headquarters": "The beached longboat",
-        "relations": { "fac_wreckers": "war" },
-        "perks": ["Seamanship and boats"],
-        "penalties": ["Mutiny"]
+        "relations": {
+          "fac_wreckers": "war"
+        },
+        "perks": [
+          "Seamanship and boats"
+        ],
+        "penalties": [
+          "Mutiny"
+        ],
+        "ideology": "Maritime camaraderie, treasure hunting, and getting paid in full."
       },
       {
         "id": "fac_wreckers",
@@ -138,9 +197,16 @@
         "color": "#ef4444",
         "leader": "One-Eyed Sabb",
         "headquarters": "The signal cave",
-        "relations": { "fac_crew": "war" },
-        "perks": ["Salvage and ambushes"],
-        "penalties": ["No quarter given"]
+        "relations": {
+          "fac_crew": "war"
+        },
+        "perks": [
+          "Salvage and ambushes"
+        ],
+        "penalties": [
+          "No quarter given"
+        ],
+        "ideology": "Predatory coastal salvage and luring merchant ships onto reefs."
       },
       {
         "id": "fac_tidewardens",
@@ -153,8 +219,13 @@
         "leader": "Unknown",
         "headquarters": "Tidefall Spire",
         "relations": {},
-        "perks": ["Tide lore"],
-        "penalties": ["The bell's attention"]
+        "perks": [
+          "Tide lore"
+        ],
+        "penalties": [
+          "The bell's attention"
+        ],
+        "ideology": "Silent guardianship of primordial submerged mysteries and relics."
       }
     ],
     "abilities": [
@@ -167,7 +238,9 @@
         "currentCooldown": 0,
         "effect": "Ignores hazardous footing for a scene",
         "unlocked": true,
-        "tags": ["survival"],
+        "tags": [
+          "survival"
+        ],
         "icon": "anchor"
       },
       {
@@ -179,7 +252,9 @@
         "currentCooldown": 0,
         "effect": "Learns what the next tide will uncover",
         "unlocked": true,
-        "tags": ["perk"],
+        "tags": [
+          "perk"
+        ],
         "icon": "waves"
       },
       {
@@ -189,10 +264,14 @@
         "category": "combat",
         "cooldownTurns": 3,
         "currentCooldown": 0,
-        "cost": { "hp": 1 },
+        "cost": {
+          "hp": 1
+        },
         "effect": "Strikes first in a boarding fight",
         "unlocked": true,
-        "tags": ["combat"],
+        "tags": [
+          "combat"
+        ],
         "icon": "swords"
       }
     ],
@@ -202,7 +281,17 @@
     "gm_tone": "Salt, storm, and old magic",
     "narrator_style": "Brisk nautical prose in the present tense",
     "difficulty": "normal",
-    "optional_verbs": ["gold", "status", "skill", "rel", "npc", "npcdel", "move", "weather", "var"],
+    "optional_verbs": [
+      "gold",
+      "status",
+      "skill",
+      "rel",
+      "npc",
+      "npcdel",
+      "move",
+      "weather",
+      "var"
+    ],
     "npc_cap": 5,
     "max_actor_depth": 3,
     "lock_bg": false,
@@ -212,46 +301,80 @@
     "location_map": [
       {
         "name": "Shingle Camp",
-        "keys": ["shingle", "camp", "tents"],
+        "keys": [
+          "shingle",
+          "camp",
+          "tents"
+        ],
         "bg": "assets/backgrounds/rainy_night_street.png",
         "tier": 1,
         "alertLevel": "normal",
         "controllingFaction": "fac_crew",
-        "description": "Tents and a beached boat under the spire's shadow."
+        "description": "Tents and a beached boat under the spire's shadow.",
+        "connectedZoneIds": [
+          "Flooded Vaults",
+          "Wreckers' Signal Cave"
+        ]
       },
       {
         "name": "Flooded Vaults",
-        "keys": ["vaults", "flooded", "archive"],
+        "keys": [
+          "vaults",
+          "flooded",
+          "archive"
+        ],
         "bg": "assets/backgrounds/dungeon.png",
         "tier": 2,
         "alertLevel": "heightened",
         "controllingFaction": "fac_tidewardens",
-        "description": "Drowned halls of the wizard's archive, passable only at low water."
+        "description": "Drowned halls of the wizard's archive, passable only at low water.",
+        "connectedZoneIds": [
+          "Shingle Camp",
+          "The Spire Crown"
+        ]
       },
       {
         "name": "The Spire Crown",
-        "keys": ["crown", "spire", "belfry"],
+        "keys": [
+          "crown",
+          "spire",
+          "belfry"
+        ],
         "bg": "assets/backgrounds/palace_hall.png",
         "tier": 3,
         "alertLevel": "heightened",
         "controllingFaction": "fac_tidewardens",
-        "description": "The wind-torn crown of the spire and its silent belfry."
+        "description": "The wind-torn crown of the spire and its silent belfry.",
+        "connectedZoneIds": [
+          "Flooded Vaults"
+        ]
       },
       {
         "name": "Wreckers' Signal Cave",
-        "keys": ["signal", "wreckers", "beacon"],
+        "keys": [
+          "signal",
+          "wreckers",
+          "beacon"
+        ],
         "bg": "assets/backgrounds/tavern_room.png",
         "tier": 2,
         "alertLevel": "hostile",
         "controllingFaction": "fac_wreckers",
-        "description": "A lamp-lit cave of false beacons and cut rigging."
+        "description": "A lamp-lit cave of false beacons and cut rigging.",
+        "connectedZoneIds": [
+          "Shingle Camp"
+        ]
       }
     ],
     "start_state": {
       "hp": 22,
       "maxHp": 22,
       "gold": 50,
-      "skills": { "Athletics": 3, "Perception": 2, "Seamanship": 2 },
+      "skills": {
+        "Athletics": 3,
+        "Perception": 2,
+        "Seamanship": 2
+      },
       "inventory": [
         {
           "id": "inv_bell",
@@ -287,7 +410,9 @@
           "category": "consumable",
           "description": "Courage by the mouthful.",
           "useEffect": "heal 5",
-          "tags": ["drink"]
+          "tags": [
+            "drink"
+          ]
         },
         {
           "id": "inv_chart_case",
@@ -298,8 +423,14 @@
         }
       ],
       "facts": [
-        { "key": "bell_rang_twice", "value": "The drowned bell has rung twice this season" },
-        { "key": "vaults_flood", "value": "The vaults are passable only at low water" }
+        {
+          "key": "bell_rang_twice",
+          "value": "The drowned bell has rung twice this season"
+        },
+        {
+          "key": "vaults_flood",
+          "value": "The vaults are passable only at low water"
+        }
       ],
       "location": "Shingle Camp",
       "timeOfDay": "Day",
