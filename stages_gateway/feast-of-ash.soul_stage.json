@@ -38,9 +38,18 @@
         "status": "active",
         "requiresItem": "Silver Cup",
         "objectives": [
-          { "text": "Question the cupbearer", "completed": false },
-          { "text": "Test the cups with silver", "completed": false },
-          { "text": "Name the poisoner before the court", "completed": false }
+          {
+            "text": "Question the cupbearer",
+            "completed": false
+          },
+          {
+            "text": "Test the cups with silver",
+            "completed": false
+          },
+          {
+            "text": "Name the poisoner before the court",
+            "completed": false
+          }
         ]
       },
       {
@@ -58,7 +67,9 @@
         "personality": "Polite, cold, never answers directly",
         "position": "By the throne, beside the Ashen King",
         "active": true,
-        "notes": ["Knows more about the poison than they admit"]
+        "notes": [
+          "Knows more about the poison than they admit"
+        ]
       },
       {
         "id": "npc_jester",
@@ -67,7 +78,9 @@
         "personality": "Chatty, nimble, hides a sharp mind behind grimaces",
         "position": "Weaving between tables with a tray",
         "active": true,
-        "notes": ["Their bells jingle for no reason"]
+        "notes": [
+          "Their bells jingle for no reason"
+        ]
       },
       {
         "id": "npc_chronicler",
@@ -76,7 +89,9 @@
         "personality": "Broken but stubborn keeper of the truth",
         "position": "The vaults beneath the hall",
         "active": true,
-        "notes": ["Saw who set the capital ablaze"]
+        "notes": [
+          "Saw who set the capital ablaze"
+        ]
       }
     ],
     "dice_rolls_enabled": true,
@@ -84,11 +99,46 @@
     "genre": "dark_fantasy",
     "ruleset": "d20",
     "resource_definitions": [
-      { "id": "hp", "name": "Health", "value": 24, "min": 0, "max": 24, "unit": "HP", "icon": "heart", "color": "emerald" },
-      { "id": "gold", "name": "Gold", "value": 60, "min": 0, "max": 999, "unit": "◈", "icon": "gold", "color": "amber" },
-      { "id": "favor", "name": "Court Favor", "value": 2, "min": 0, "max": 6, "unit": "lvl", "icon": "crown", "color": "violet" }
+      {
+        "id": "hp",
+        "name": "Health",
+        "value": 24,
+        "min": 0,
+        "max": 24,
+        "unit": "HP",
+        "icon": "heart",
+        "color": "emerald"
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "value": 60,
+        "min": 0,
+        "max": 999,
+        "unit": "◈",
+        "icon": "gold",
+        "color": "amber"
+      },
+      {
+        "id": "favor",
+        "name": "Court Favor",
+        "value": 2,
+        "min": 0,
+        "max": 6,
+        "unit": "lvl",
+        "icon": "crown",
+        "color": "violet"
+      }
     ],
-    "enabled_modules": { "clocks": true, "quests": true, "inventory": true, "dice": true, "resources": true, "factions": true, "abilities": true },
+    "enabled_modules": {
+      "clocks": true,
+      "quests": true,
+      "inventory": true,
+      "dice": true,
+      "resources": true,
+      "factions": true,
+      "abilities": true
+    },
     "factions": [
       {
         "id": "fac_house_ash",
@@ -100,9 +150,16 @@
         "color": "#f59e0b",
         "leader": "The Ashen King",
         "headquarters": "The Throne Hall",
-        "relations": { "fac_veil_circle": "war" },
-        "perks": ["An audience with the throne"],
-        "penalties": ["Exile from the court"]
+        "relations": {
+          "fac_veil_circle": "war"
+        },
+        "perks": [
+          "An audience with the throne"
+        ],
+        "penalties": [
+          "Exile from the court"
+        ],
+        "ideology": "Dynastic supremacy maintained through subtle poison, debt, and court etiquette."
       },
       {
         "id": "fac_veil_circle",
@@ -114,9 +171,16 @@
         "color": "#8b5cf6",
         "leader": "Unknown",
         "headquarters": "The Vaults",
-        "relations": { "fac_house_ash": "war" },
-        "perks": ["Poisons and antidotes"],
-        "penalties": ["Hunted by the guard"]
+        "relations": {
+          "fac_house_ash": "war"
+        },
+        "perks": [
+          "Poisons and antidotes"
+        ],
+        "penalties": [
+          "Hunted by the guard"
+        ],
+        "ideology": "Infiltration and overthrow of the corrupt aristocracy from within."
       }
     ],
     "abilities": [
@@ -129,7 +193,9 @@
         "currentCooldown": 0,
         "effect": "+2 to the next social check",
         "unlocked": true,
-        "tags": ["social"],
+        "tags": [
+          "social"
+        ],
         "icon": "sparkles"
       },
       {
@@ -141,7 +207,9 @@
         "currentCooldown": 0,
         "effect": "Senses poison in nearby food and drink",
         "unlocked": true,
-        "tags": ["survival"],
+        "tags": [
+          "survival"
+        ],
         "icon": "flask"
       }
     ],
@@ -151,7 +219,17 @@
     "gm_tone": "Grim courtly fantasy",
     "narrator_style": "Weighty ceremonial prose in the present tense",
     "difficulty": "normal",
-    "optional_verbs": ["gold", "status", "skill", "rel", "npc", "npcdel", "move", "weather", "var"],
+    "optional_verbs": [
+      "gold",
+      "status",
+      "skill",
+      "rel",
+      "npc",
+      "npcdel",
+      "move",
+      "weather",
+      "var"
+    ],
     "npc_cap": 4,
     "max_actor_depth": 3,
     "lock_bg": false,
@@ -161,37 +239,65 @@
     "location_map": [
       {
         "name": "The Ashen Throne Hall",
-        "keys": ["throne", "throne hall", "ashen throne"],
+        "keys": [
+          "throne",
+          "throne hall",
+          "ashen throne"
+        ],
         "bg": "assets/backgrounds/palace_hall.png",
         "tier": 1,
         "alertLevel": "normal",
         "controllingFaction": "fac_house_ash",
-        "description": "A blackened hall with an ashen throne and a long feasting table."
+        "description": "A blackened hall with an ashen throne and a long feasting table.",
+        "connectedZoneIds": [
+          "The Vaults Beneath",
+          "The Wine Cellar"
+        ]
       },
       {
         "name": "The Vaults Beneath",
-        "keys": ["vaults", "dungeon", "shackles"],
+        "keys": [
+          "vaults",
+          "dungeon",
+          "shackles"
+        ],
         "bg": "assets/backgrounds/dungeon.png",
         "tier": 2,
         "alertLevel": "heightened",
         "controllingFaction": "fac_veil_circle",
-        "description": "Dank cells below the hall where Chronicler Odd is held."
+        "description": "Dank cells below the hall where Chronicler Odd is held.",
+        "connectedZoneIds": [
+          "The Ashen Throne Hall",
+          "The Wine Cellar"
+        ]
       },
       {
         "name": "The Wine Cellar",
-        "keys": ["cellar", "barrels", "wine"],
+        "keys": [
+          "cellar",
+          "barrels",
+          "wine"
+        ],
         "bg": "assets/backgrounds/tavern_room.png",
         "tier": 2,
         "alertLevel": "normal",
         "controllingFaction": "fac_house_ash",
-        "description": "Casks and bottles; here the cupbearer fills the cups for the feast."
+        "description": "Casks and bottles; here the cupbearer fills the cups for the feast.",
+        "connectedZoneIds": [
+          "The Ashen Throne Hall",
+          "The Vaults Beneath"
+        ]
       }
     ],
     "start_state": {
       "hp": 24,
       "maxHp": 24,
       "gold": 60,
-      "skills": { "Etiquette": 3, "Perception": 2, "Stealth": 1 },
+      "skills": {
+        "Etiquette": 3,
+        "Perception": 2,
+        "Stealth": 1
+      },
       "inventory": [
         {
           "id": "inv_silver_cup",
@@ -207,7 +313,9 @@
           "category": "consumable",
           "description": "A bitter tincture of the Veil Circle.",
           "useEffect": "heal 8",
-          "tags": ["healing"]
+          "tags": [
+            "healing"
+          ]
         },
         {
           "id": "inv_dagger",
@@ -231,8 +339,14 @@
         }
       ],
       "facts": [
-        { "key": "capital_burned", "value": "The capital burned ten years ago under unclear circumstances" },
-        { "key": "poison_in_cups", "value": "Someone is lacing the feast cups with ash poison" }
+        {
+          "key": "capital_burned",
+          "value": "The capital burned ten years ago under unclear circumstances"
+        },
+        {
+          "key": "poison_in_cups",
+          "value": "Someone is lacing the feast cups with ash poison"
+        }
       ],
       "location": "The Ashen Throne Hall",
       "timeOfDay": "Evening",
