@@ -38,9 +38,18 @@
         "status": "active",
         "requiresItem": "Unsigned Letter",
         "objectives": [
-          { "text": "Find the next letter", "completed": false },
-          { "text": "Recognize the handwriting", "completed": false },
-          { "text": "Keep the rendezvous — or burn the letter", "completed": false }
+          {
+            "text": "Find the next letter",
+            "completed": false
+          },
+          {
+            "text": "Recognize the handwriting",
+            "completed": false
+          },
+          {
+            "text": "Keep the rendezvous — or burn the letter",
+            "completed": false
+          }
         ]
       },
       {
@@ -58,7 +67,9 @@
         "personality": "Withdrawn, proud, laughs rarely — but precisely",
         "position": "At the piano in the empty classroom",
         "active": true,
-        "notes": ["Hides letters inside sheet music"]
+        "notes": [
+          "Hides letters inside sheet music"
+        ]
       },
       {
         "id": "npc_miriam",
@@ -67,7 +78,9 @@
         "personality": "Composed, proper, secretly envies other people's courage",
         "position": "On duty in the corridor",
         "active": true,
-        "notes": ["Knows every rumor, tells none"]
+        "notes": [
+          "Knows every rumor, tells none"
+        ]
       },
       {
         "id": "npc_finn",
@@ -76,7 +89,9 @@
         "personality": "Loud, charming, used to getting everything",
         "position": "On the porch with friends",
         "active": true,
-        "notes": ["Plans to invite the hero to the ball in front of everyone"]
+        "notes": [
+          "Plans to invite the hero to the ball in front of everyone"
+        ]
       }
     ],
     "dice_rolls_enabled": false,
@@ -84,11 +99,46 @@
     "genre": "romance",
     "ruleset": "narrative",
     "resource_definitions": [
-      { "id": "hp", "name": "Health", "value": 20, "min": 0, "max": 20, "unit": "HP", "icon": "heart", "color": "emerald" },
-      { "id": "gold", "name": "Pocket Money", "value": 25, "min": 0, "max": 999, "unit": "c.", "icon": "gold", "color": "amber" },
-      { "id": "courage", "name": "Courage", "value": 1, "min": 0, "max": 5, "unit": "pts", "icon": "flame", "color": "rose" }
+      {
+        "id": "hp",
+        "name": "Health",
+        "value": 20,
+        "min": 0,
+        "max": 20,
+        "unit": "HP",
+        "icon": "heart",
+        "color": "emerald"
+      },
+      {
+        "id": "gold",
+        "name": "Pocket Money",
+        "value": 25,
+        "min": 0,
+        "max": 999,
+        "unit": "c.",
+        "icon": "gold",
+        "color": "amber"
+      },
+      {
+        "id": "courage",
+        "name": "Courage",
+        "value": 1,
+        "min": 0,
+        "max": 5,
+        "unit": "pts",
+        "icon": "flame",
+        "color": "rose"
+      }
     ],
-    "enabled_modules": { "clocks": true, "quests": true, "inventory": true, "dice": false, "resources": true, "factions": true, "abilities": true },
+    "enabled_modules": {
+      "clocks": true,
+      "quests": true,
+      "inventory": true,
+      "dice": false,
+      "resources": true,
+      "factions": true,
+      "abilities": true
+    },
     "factions": [
       {
         "id": "fac_choir",
@@ -100,9 +150,16 @@
         "color": "#38bdf8",
         "leader": "Theo",
         "headquarters": "The music room",
-        "relations": { "fac_team": "rivalry" },
-        "perks": ["Rehearsals and sheet music"],
-        "penalties": ["The team's jeers"]
+        "relations": {
+          "fac_team": "rivalry"
+        },
+        "perks": [
+          "Rehearsals and sheet music"
+        ],
+        "penalties": [
+          "The team's jeers"
+        ],
+        "ideology": "Tradition, musical perfection, and maintaining high academy prestige."
       },
       {
         "id": "fac_team",
@@ -114,9 +171,16 @@
         "color": "#f59e0b",
         "leader": "Finn",
         "headquarters": "The stadium",
-        "relations": { "fac_choir": "rivalry" },
-        "perks": ["The stands' support"],
-        "penalties": ["The choir's teasing"]
+        "relations": {
+          "fac_choir": "rivalry"
+        },
+        "perks": [
+          "The stands' support"
+        ],
+        "penalties": [
+          "The choir's teasing"
+        ],
+        "ideology": "Camaraderie, spontaneous youth, and breaking academy orthodoxy."
       }
     ],
     "abilities": [
@@ -129,7 +193,9 @@
         "currentCooldown": 0,
         "effect": "Opens an honest conversation",
         "unlocked": true,
-        "tags": ["social"],
+        "tags": [
+          "social"
+        ],
         "icon": "heart"
       },
       {
@@ -141,7 +207,9 @@
         "currentCooldown": 0,
         "effect": "Learns the academy's freshest rumor",
         "unlocked": true,
-        "tags": ["perk"],
+        "tags": [
+          "perk"
+        ],
         "icon": "ear"
       }
     ],
@@ -151,7 +219,17 @@
     "gm_tone": "Warm coming-of-age romance",
     "narrator_style": "Tender, attentive prose in the present tense",
     "difficulty": "easy",
-    "optional_verbs": ["gold", "status", "skill", "rel", "npc", "npcdel", "move", "weather", "var"],
+    "optional_verbs": [
+      "gold",
+      "status",
+      "skill",
+      "rel",
+      "npc",
+      "npcdel",
+      "move",
+      "weather",
+      "var"
+    ],
     "npc_cap": 4,
     "max_actor_depth": 3,
     "lock_bg": false,
@@ -161,37 +239,65 @@
     "location_map": [
       {
         "name": "The Academy Greenhouse",
-        "keys": ["greenhouse", "academy", "hothouse"],
+        "keys": [
+          "greenhouse",
+          "academy",
+          "hothouse"
+        ],
         "bg": "assets/backgrounds/school_class.png",
         "tier": 1,
         "alertLevel": "normal",
         "controllingFaction": "fac_choir",
-        "description": "Glass, green, and notes hidden between the pots."
+        "description": "Glass, green, and notes hidden between the pots.",
+        "connectedZoneIds": [
+          "The Rooftop Café",
+          "The Ballroom"
+        ]
       },
       {
         "name": "The Rooftop Café",
-        "keys": ["café", "rooftop", "terrace"],
+        "keys": [
+          "café",
+          "rooftop",
+          "terrace"
+        ],
         "bg": "assets/backgrounds/tavern_hall.png",
         "tier": 2,
         "alertLevel": "normal",
         "controllingFaction": "fac_team",
-        "description": "Tables above the city: rendezvous are made here."
+        "description": "Tables above the city: rendezvous are made here.",
+        "connectedZoneIds": [
+          "The Academy Greenhouse",
+          "The Ballroom"
+        ]
       },
       {
         "name": "The Ballroom",
-        "keys": ["ballroom", "ball", "parquet"],
+        "keys": [
+          "ballroom",
+          "ball",
+          "parquet"
+        ],
         "bg": "assets/backgrounds/palace_hall.png",
         "tier": 3,
         "alertLevel": "normal",
         "controllingFaction": "fac_choir",
-        "description": "An empty hall awaiting the orchestra and the masks."
+        "description": "An empty hall awaiting the orchestra and the masks.",
+        "connectedZoneIds": [
+          "The Academy Greenhouse",
+          "The Rooftop Café"
+        ]
       }
     ],
     "start_state": {
       "hp": 20,
       "maxHp": 20,
       "gold": 25,
-      "skills": { "Charm": 3, "Observation": 2, "Music": 2 },
+      "skills": {
+        "Charm": 3,
+        "Observation": 2,
+        "Music": 2
+      },
       "inventory": [
         {
           "id": "inv_letter",
@@ -214,7 +320,9 @@
           "category": "consumable",
           "description": "For courage and for friends.",
           "useEffect": "heal 4",
-          "tags": ["food"]
+          "tags": [
+            "food"
+          ]
         },
         {
           "id": "inv_dress",
@@ -229,8 +337,14 @@
         }
       ],
       "facts": [
-        { "key": "letters_in_greenhouse", "value": "Someone leaves unsigned letters in the greenhouse" },
-        { "key": "ball_soon", "value": "The spring ball is the event of the year" }
+        {
+          "key": "letters_in_greenhouse",
+          "value": "Someone leaves unsigned letters in the greenhouse"
+        },
+        {
+          "key": "ball_soon",
+          "value": "The spring ball is the event of the year"
+        }
       ],
       "location": "The Academy Greenhouse",
       "timeOfDay": "Day",
